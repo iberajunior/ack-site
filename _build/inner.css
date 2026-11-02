@@ -404,3 +404,19 @@ footer .foot>div>a{overflow-wrap:anywhere}
 @media(max-width:700px){.mapfull{height:380px}}
 .dd.open .mega{opacity:1;visibility:visible;transform:none}
 .mega-in.wrap{max-width:1184px;margin:0 auto}
+
+/* v3 · ajustes do menu e espaçamentos */
+.menu{gap:2px;padding:0;border:0;background:none;border-radius:0;font-size:13.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.menu>a,.dd-t{padding:12px 15px;border-radius:0;background:none!important;letter-spacing:inherit;text-transform:inherit}
+.menu>a::after,.dd-t::after{content:"";display:block;position:absolute;left:15px;right:15px;bottom:4px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.menu>a:hover,.dd:hover .dd-t{color:var(--gold)}
+.menu>a:hover::after,.menu>a.on::after,.dd-t.on::after{transform:scaleX(1)}
+.menu>a.on,.dd-t.on{color:var(--gold)}
+.dd-t{padding-right:13px}
+.bar{border-bottom:1px solid rgba(236,232,255,.1);box-shadow:0 14px 30px -24px rgba(0,0,0,.8)}
+header.scrolled .bar{border-bottom-color:rgba(236,232,255,.14)}
+.tb-aluno{background:none;color:var(--gold);padding:0 0 0 18px;border-left:1px solid var(--line);font-weight:700}
+.tb-aluno:hover{background:none;color:#ffd35c}
+.phero{padding-top:190px}
+.phero.short{padding-top:180px;padding-bottom:56px}
+.phero.has-person{min-height:640px}

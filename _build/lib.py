@@ -312,7 +312,7 @@ FOOTER = f'''<footer>
 
 HERO_PHOTO = {"sobre.html":"sobre","consultoria-empresarial.html":"consultoria","planejamento-estrategico.html":"planejamento",
  "treinamentos.html":"treinamentos","team-building.html":"team-building","cursos.html":"cursos","curso-especialista-melhoria-continua.html":"curso",
- "servicos-de-rh.html":"rh","perguntas-frequentes.html":"faq","conteudos.html":"conteudos","5s-por-onde-comecar.html":"conteudos","contato.html":"contato"}
+ "servicos-de-rh.html":"rh","contato.html":"contato"}
 
 def phero(trail, eyebrow, h1, lead, image, ctas="", chips="", cls=""):
     c = f'<div class="hero-ctas rv d3">{ctas}</div>' if ctas else ''
