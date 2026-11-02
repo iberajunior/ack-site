@@ -80,8 +80,8 @@ header.scrolled .logo img{height:42px}
 .logos p{text-align:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
 .marquee{display:flex;width:max-content;animation:marq 38s linear infinite;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
 .logos:hover .marquee{animation-play-state:paused}
-.marquee div{display:flex;align-items:center;gap:70px;padding-right:70px}
-.marquee img{height:46px;width:auto;max-width:170px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.55;transition:opacity .3s,filter .3s}
+.marquee div{display:flex;align-items:center;gap:20px;padding-right:20px}
+.marquee img{height:72px;width:160px;object-fit:contain;padding:12px 18px;background:#fff;border-radius:16px;filter:grayscale(1);opacity:.8;transition:opacity .3s,filter .3s}
 .marquee img:hover{opacity:1;filter:none}
 @keyframes marq{to{transform:translateX(-50%)}}
 

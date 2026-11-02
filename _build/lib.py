@@ -229,7 +229,7 @@ def checks(items):
 def bullets(items):
     return '<ul class="bullets">'+"".join(f'<li>{x}</li>' for x in items)+'</ul>'
 
-LOGOS = [("b2ec3b_b3c1f7812e4549b7bd5d8b05ded44332~mv2.png","Fundação Copel"),("b2ec3b_4ab3041f06cc469780744e2dad8fc5c5~mv2.png","Cliente"),("b2ec3b_41f7d3c23b3749c4a66e551cb622f6e1~mv2.jpeg","Outdoormidia"),("b2ec3b_7a638cb7745e42d5accaa4e8955540c2~mv2.png","Cliente"),("b2ec3b_17c372e255414bc081576a0636fa7da2~mv2.png","Cliente"),("b2ec3b_9b897b8df04342d6904cad922a7d01c1~mv2.png","Cliente"),("b2ec3b_53d8e52f7d554983ba6ae094748b99ec~mv2.png","Cliente"),("b2ec3b_3f11023a19f24f9b9f27add189e3ca4a~mv2.png","Cliente"),("b2ec3b_4486e6c75cb349e18c1490d40080f217~mv2.png","C12 Brasil"),("b2ec3b_a4e451e87dfb47aaae48b37c3a69a2df~mv2.png","Abigraf")]
+LOGOS = [("b2ec3b_b3c1f7812e4549b7bd5d8b05ded44332~mv2.png","Fundação Copel"),("b2ec3b_4ab3041f06cc469780744e2dad8fc5c5~mv2.png","Grupo Risotolândia"),("b2ec3b_41f7d3c23b3749c4a66e551cb622f6e1~mv2.jpeg","Outdoormidia"),("b2ec3b_7a638cb7745e42d5accaa4e8955540c2~mv2.png","Grupo Boticário"),("b2ec3b_17c372e255414bc081576a0636fa7da2~mv2.png","Cliente"),("b2ec3b_9b897b8df04342d6904cad922a7d01c1~mv2.png","Cliente"),("b2ec3b_53d8e52f7d554983ba6ae094748b99ec~mv2.png","Cliente"),("b2ec3b_3f11023a19f24f9b9f27add189e3ca4a~mv2.png","Cliente"),("b2ec3b_4486e6c75cb349e18c1490d40080f217~mv2.png","C12 Brasil"),("b2ec3b_a4e451e87dfb47aaae48b37c3a69a2df~mv2.png","Abigraf")]
 def logos(label="Empresas e parceiros que confiam no Instituto"):
     ims="".join(f'<img src="https://static.wixstatic.com/media/{i}" alt="{a}" loading="lazy">' for i,a in LOGOS)
     return f'<div class="logos"><p>{label}</p><div class="marquee" id="marq"><div>{ims}</div></div></div>'
