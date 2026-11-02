@@ -112,7 +112,7 @@ def crumbs_ld(trail):
 
 def page(slug, title, desc, active, body, trail, extra_ld=(), body_class=""):
     ld={"@context":"https://schema.org","@graph":[ORG,crumbs_ld(trail),*extra_ld]}
-    bc=f' class="{body_class}"' if body_class else ''
+    bc=f' class="inner {body_class}"'.replace(' "','"')
     return f'''<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -233,3 +233,103 @@ LOGOS = [("b2ec3b_b3c1f7812e4549b7bd5d8b05ded44332~mv2.png","Fundação Copel"),
 def logos(label="Empresas e parceiros que confiam no Instituto"):
     ims="".join(f'<img src="https://static.wixstatic.com/media/{i}" alt="{a}" loading="lazy">' for i,a in LOGOS)
     return f'<div class="logos"><p>{label}</p><div class="marquee" id="marq"><div>{ims}</div></div></div>'
+
+# ===== Cabeçalho, rodapé e hero das internas (v2, ajustes de 02/11) =====
+SOCIAL = [
+ ("LinkedIn","https://www.linkedin.com/company/instituto-ackler",'<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6v5.4h-4v-4.8c0-1.2 0-2.6-1.6-2.6s-1.9 1.3-1.9 2.5v4.9h-4z"/>'),
+ ("Instagram","https://www.instagram.com/institutoackler/",'<path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zM17 5.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 3c-2.4 0-2.7 0-3.7.1-3.3.1-5.1 1.9-5.2 5.2C3 9.3 3 9.6 3 12s0 2.7.1 3.7c.1 3.3 1.9 5.1 5.2 5.2 1 .1 1.3.1 3.7.1s2.7 0 3.7-.1c3.3-.1 5.1-1.9 5.2-5.2.1-1 .1-1.3.1-3.7s0-2.7-.1-3.7c-.1-3.3-1.9-5.1-5.2-5.2C14.7 3 14.4 3 12 3zm0 1.6c2.4 0 2.6 0 3.6.1 2.4.1 3.6 1.3 3.7 3.7.1 1 .1 1.2.1 3.6s0 2.6-.1 3.6c-.1 2.4-1.3 3.6-3.7 3.7-1 .1-1.2.1-3.6.1s-2.6 0-3.6-.1c-2.4-.1-3.6-1.3-3.7-3.7-.1-1-.1-1.2-.1-3.6s0-2.6.1-3.6c.1-2.4 1.3-3.6 3.7-3.7 1-.1 1.2-.1 3.6-.1z"/>'),
+ ("YouTube","https://www.youtube.com/@InstitutoAckler",'<path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/>'),
+ ("Facebook","http://facebook.com/institutoackler",'<path d="M13.5 21v-8h2.7l.4-3.2h-3.1v-2c0-.9.3-1.6 1.6-1.6h1.7V3.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V13h2.8v8h3.3z"/>'),
+]
+def socials(cls="soc"):
+    return f'<div class="{cls}">'+"".join(f'<a href="{u}" aria-label="{n}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor">{p}</svg></a>' for n,u,p in SOCIAL)+'</div>'
+
+def svg(k, w=1.8):
+    return f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="{w}">{ICO[k]}</svg>'
+
+MEGA = [
+ ("Consultoria", [("consultoria-empresarial.html","chart","Consultoria Empresarial","Gestão e governança, da PME à indústria"),
+                  ("planejamento-estrategico.html","target","Planejamento Estratégico","Seu plano pronto em 30 dias"),
+                  ("servicos-de-rh.html","id","Serviços de RH","Recrutamento, BPO e perfis comportamentais")]),
+ ("Capacitação", [("treinamentos.html","people","Treinamentos In Company","Temas aplicados à rotina da equipe"),
+                  ("team-building.html","heart","Team Building","Vivências in company e offsite"),
+                  ("cursos.html","cap","Cursos","On-line e presenciais, com certificado")]),
+]
+SOL = [h for _,its in MEGA for h,*_ in its if h!="cursos.html"]
+MAIN = [("Cursos","cursos.html"),("Sobre","sobre.html"),("Conteúdos","conteudos.html"),("FAQ","perguntas-frequentes.html"),("Contato","contato.html")]
+ON = ' class="on"'
+
+def header(active):
+    cols="".join(f'<div class="mcol"><b>{t}</b>'+"".join(f'<a href="{h}"{ON if h==active else ""}><i>{svg(k,1.6)}</i><span>{n}<small>{d}</small></span></a>' for h,k,n,d in its)+'</div>' for t,its in MEGA)
+    feat=f'<a class="mfeat" href="planejamento-estrategico.html"><span class="tag">Projeto de 30 dias</span><strong>Um plano estratégico pronto em 30 dias</strong><em>Conhecer o projeto {ARROW}</em></a>'
+    son=' on' if active in SOL else ''
+    items=[f'<div class="dd"><button class="dd-t{son}" type="button" aria-haspopup="true">Soluções {CHEV}</button><div class="mega"><div class="wrap mega-in">{cols}{feat}</div></div></div>']
+    items+=[f'<a href="{h}"{ON if h==active else ""}>{t}</a>' for t,h in MAIN]
+    dl=['<span class="dl-h">Soluções</span>']+[f'<a class="s" href="{h}">{n}</a>' for _,its in MEGA for h,k,n,d in its]
+    dl+=[f'<a href="{h}">{t}</a>' for t,h in MAIN if h!="cursos.html"]
+    return f'''<header id="hd">
+  <div class="topbar"><div class="wrap tb">
+    <div class="tb-l">
+      <a href="{WA}">{svg("wa")}(41) 99576-0079</a>
+      <a href="mailto:contato@institutoackler.com.br">{svg("mail")}contato@institutoackler.com.br</a>
+      <span>{svg("pin")}Curitiba, PR · atendimento em todo o Brasil</span>
+    </div>
+    <div class="tb-r">{socials()}<a class="tb-aluno" href="{AREA_ALUNO}">{svg("cap")}Área do aluno</a></div>
+  </div></div>
+  <div class="bar"><div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Instituto Ackler, página inicial"><img src="assets/logo.png" alt="Instituto Ackler · Valores e Resultados"></a>
+    <nav class="menu">{"".join(items)}</nav>
+    <div class="nav-cta">
+      <a class="call" href="{WA}"><i>{svg("wa")}</i><span><small>Fale com um consultor</small><b>(41) 99576-0079</b></span></a>
+      <a class="btn btn-gold" href="contato.html">Agendar conversa</a>
+    </div>
+    <button class="burger" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div></div>
+</header>
+<div class="drawer" id="drawer" role="dialog" aria-label="Menu">
+  <div class="top"><img src="assets/logo.png" alt="Instituto Ackler"><button class="x" aria-label="Fechar menu">×</button></div>
+  <nav>{"".join(dl)}<a href="{AREA_ALUNO}" style="color:var(--gold)">Área do aluno</a></nav>
+  <a class="btn btn-gold" href="contato.html">Agendar conversa {ARROW}</a>
+  {socials("soc dsoc")}
+</div>'''
+
+HEART = '<svg class="hrt" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="amor"><path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 3 4 6.8 4c2.1 0 3.7 1.1 5.2 3 1.5-1.9 3.1-3 5.2-3C21 4 23.1 8 21.6 11.6 19.5 16.4 12 21 12 21z"/></svg>'
+WA_SVG = '<svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>'
+
+FOOTER = f'''<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><img src="assets/logo.png" alt="Instituto Ackler"><p style="max-width:300px;line-height:1.6">Consultoria, treinamentos e cursos em gestão, governança e melhoria contínua. Curitiba, PR.</p>{socials("soc fsoc")}</div>
+      <div><h4>Soluções</h4><a href="consultoria-empresarial.html">Consultoria Empresarial</a><a href="planejamento-estrategico.html">Planejamento Estratégico</a><a href="treinamentos.html">Treinamentos</a><a href="team-building.html">Team Building</a><a href="servicos-de-rh.html">Serviços de RH</a></div>
+      <div><h4>Instituto</h4><a href="sobre.html">Sobre</a><a href="cursos.html">Cursos</a><a href="conteudos.html">Conteúdos</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="{AREA_ALUNO}">Área do aluno</a></div>
+      <div><h4>Contato</h4><a href="{WA}">(41) 99576-0079</a><a href="mailto:contato@institutoackler.com.br">contato@institutoackler.com.br</a><a href="contato.html">Rua do Herval, 636 · Curitiba, PR</a></div>
+    </div>
+    <div class="copy"><span>© <span data-year>2026</span> Instituto Ackler · Valores e Resultados</span><span class="made">Feito com {HEART} por <a href="https://agenciakroma.com.br" target="_blank" rel="noopener">Agência KROMA</a></span></div>
+  </div>
+</footer>
+<button class="totop" id="totop" type="button" aria-label="Voltar ao topo"><svg class="ring" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22"/><circle class="pr" cx="24" cy="24" r="22"/></svg><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+<a class="wa" href="{WA}" aria-label="Conversar no WhatsApp">{WA_SVG}</a>'''
+
+HERO_PHOTO = {"sobre.html":"sobre","consultoria-empresarial.html":"consultoria","planejamento-estrategico.html":"planejamento",
+ "treinamentos.html":"treinamentos","team-building.html":"team-building","cursos.html":"cursos","curso-especialista-melhoria-continua.html":"curso",
+ "servicos-de-rh.html":"rh","perguntas-frequentes.html":"faq","conteudos.html":"conteudos","5s-por-onde-comecar.html":"conteudos","contato.html":"contato"}
+
+def phero(trail, eyebrow, h1, lead, image, ctas="", chips="", cls=""):
+    c = f'<div class="hero-ctas rv d3">{ctas}</div>' if ctas else ''
+    ch = f'<div class="chips rv d3">{chips}</div>' if chips else ''
+    ph = HERO_PHOTO.get(trail[-1][1])
+    person = f'<div class="person" aria-hidden="true"><span class="halo1"></span><span class="arc"></span><img src="assets/img/hero-{ph}.webp" alt=""></div>' if ph else ''
+    hp = ' has-person' if ph else ''
+    return f'''<section class="phero {cls}{hp}" id="top">
+  <div class="bg"><img src="{img(image,1800,1000)}" alt=""></div>
+  {person}
+  <div class="wrap ph-in">
+    <div class="ph-txt">
+    {crumbs(trail)}
+    <span class="eyebrow rv">{eyebrow}</span>
+    <h1 class="rv d1">{h1}</h1>
+    <p class="lead rv d2">{lead}</p>
+    {c}{ch}
+    </div>
+  </div>
+</section>'''

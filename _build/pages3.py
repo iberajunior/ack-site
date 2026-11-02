@@ -275,11 +275,7 @@ body+=f'''
     </form>
   </div>
 </section>
-<section class="sec light" style="padding:90px 0">
-  <div class="wrap">
-    <div class="map rv"><iframe title="Mapa do escritório do Instituto Ackler" loading="lazy" src="https://www.google.com/maps?q=Rua+do+Herval,+636,+Curitiba,+PR&output=embed"></iframe></div>
-  </div>
-</section>
+<section class="mapfull" aria-label="Mapa"><iframe title="Mapa do escritório do Instituto Ackler" loading="lazy" src="https://www.google.com/maps?q=Rua+do+Herval,+636,+Curitiba,+PR&output=embed"></iframe></section>
 '''
 P["contato.html"]=("Contato · Instituto Ackler · Curitiba, PR",
  "Fale com o Instituto Ackler pelo WhatsApp (41) 99576-0079, e-mail ou formulário. Consultoria, treinamentos, cursos e RH em Curitiba, PR.",

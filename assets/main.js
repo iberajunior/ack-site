@@ -114,6 +114,16 @@ if(cf){const pre=new URLSearchParams(location.search).get('assunto');
 /* newsletter (placeholder até integrar com a ferramenta de e-mail) */
 $$('.news form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.innerHTML='<p style="color:var(--gold);font-weight:700">Pronto! Você vai receber os próximos conteúdos por e-mail.</p>'}));
 
+
+/* voltar ao topo com anel de progresso */
+const tt=$('#totop');
+if(tt){const pr=$('.pr',tt);const f=()=>{const h=document.documentElement.scrollHeight-innerHeight;const k=h>0?scrollY/h:0;tt.classList.toggle('show',scrollY>600);pr.style.strokeDashoffset=138.2*(1-k)};
+  addEventListener('scroll',f,{passive:true});f();
+  tt.onclick=()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'});}
+
+/* mega menu: fecha ao clicar fora no toque */
+$$('.dd-t').forEach(b=>b.addEventListener('click',()=>b.parentElement.classList.toggle('open')));
+
 /* ano no rodapé */
 $$('[data-year]').forEach(y=>y.textContent=new Date().getFullYear());
 })();
