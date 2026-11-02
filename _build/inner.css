@@ -406,7 +406,7 @@ footer .foot>div>a{overflow-wrap:anywhere}
 .mega-in.wrap{max-width:1184px;margin:0 auto}
 
 /* v3 · ajustes do menu e espaçamentos */
-.menu{gap:2px;padding:0;border:0;background:none;border-radius:0;font-size:13.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.menu{gap:2px;padding:0;border:0;background:none;border-radius:0;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
 .menu>a,.dd-t{padding:12px 15px;border-radius:0;background:none!important;letter-spacing:inherit;text-transform:inherit}
 .menu>a::after,.dd-t::after{content:"";display:block;position:absolute;left:15px;right:15px;bottom:4px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}
 .menu>a:hover,.dd:hover .dd-t{color:var(--gold)}
@@ -422,3 +422,18 @@ header.scrolled .bar{border-bottom-color:rgba(236,232,255,.14)}
 .phero.has-person{min-height:640px}
 /* foto de Conteúdos: corte lateral suavizado */
 .person img[src*="hero-conteudos"]{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 90%,transparent 100%),linear-gradient(180deg,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 90%,transparent 100%),linear-gradient(180deg,#000 80%,transparent 100%);mask-composite:intersect}
+
+/* v4 · mega menu: títulos em caixa alta, descrições normais; barra superior em azul */
+.mega{text-transform:none;letter-spacing:normal;font-weight:400}
+.mcol span{text-transform:uppercase;letter-spacing:.07em;font-size:12.5px;font-weight:800}
+.mcol small{text-transform:none;letter-spacing:normal;font-size:12.5px;font-weight:500;margin-top:4px}
+.mfeat strong,.mfeat em{text-transform:none;letter-spacing:normal}
+.mfeat .tag{text-transform:uppercase;letter-spacing:.08em;font-size:10.5px}
+.topbar{background:linear-gradient(90deg,#164f9f,#1D67CD 55%,#1a5fc0);border-bottom:0;color:#fff}
+.tb-l svg{color:var(--gold)}
+.tb-l a:hover{color:var(--gold)}
+.soc a{color:#fff}
+.soc a:hover{background:var(--navy);color:var(--gold)}
+.tb-aluno{border-left:1px solid rgba(255,255,255,.28);color:var(--gold)}
+.dsoc a,.fsoc a{color:#c9c6e8}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:800}
