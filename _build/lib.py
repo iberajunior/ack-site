@@ -269,12 +269,8 @@ def header(active):
     dl+=[f'<a href="{h}">{t}</a>' for t,h in MAIN if h!="cursos.html"]
     return f'''<header id="hd">
   <div class="topbar"><div class="wrap tb">
-    <div class="tb-l">
-      <a href="{WA}">{svg("wa")}(41) 99576-0079</a>
-      <a href="mailto:contato@institutoackler.com.br">{svg("mail")}contato@institutoackler.com.br</a>
-      <span>{svg("pin")}Curitiba, PR · atendimento em todo o Brasil</span>
-    </div>
-    <div class="tb-r">{socials()}<a class="tb-aluno" href="{AREA_ALUNO}">{svg("cap")}Área do aluno</a></div>
+    {socials("soc tb-soc")}
+    <a class="tb-aluno" href="{AREA_ALUNO}">{svg("cap")}Área do aluno</a>
   </div></div>
   <div class="bar"><div class="wrap nav">
     <a class="logo" href="index.html" aria-label="Instituto Ackler, página inicial"><img src="assets/logo.png" alt="Instituto Ackler · Valores e Resultados"></a>
@@ -312,7 +308,7 @@ FOOTER = f'''<footer>
 
 HERO_PHOTO = {"sobre.html":"sobre","consultoria-empresarial.html":"consultoria","planejamento-estrategico.html":"planejamento",
  "treinamentos.html":"treinamentos","team-building.html":"team-building","cursos.html":"cursos","curso-especialista-melhoria-continua.html":"curso",
- "servicos-de-rh.html":"rh","contato.html":"contato"}
+ "servicos-de-rh.html":"rh","conteudos.html":"conteudos","contato.html":"contato"}
 
 def phero(trail, eyebrow, h1, lead, image, ctas="", chips="", cls=""):
     c = f'<div class="hero-ctas rv d3">{ctas}</div>' if ctas else ''
