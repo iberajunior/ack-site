@@ -686,3 +686,15 @@ header,header.scrolled{background:none;backdrop-filter:none}
 .topbar{background:var(--navy);opacity:1}
 .bar{background:rgba(3,0,32,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 header.scrolled .bar{background:rgba(3,0,32,.86)}
+/* v7 · Área do aluno no menu, local na barra superior */
+.tb-loc{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:#9a98bf}
+.tb-loc svg{width:14px;height:14px;color:var(--gold)}
+.nav-cta{gap:22px}
+.nav-aluno{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap;transition:color .2s}
+.nav-aluno svg{width:18px;height:18px}
+.nav-aluno:hover{color:#ffd35c}
+.vsep{width:1px;height:30px;background:rgba(236,232,255,.18)}
+@media(max-width:1320px){.call{display:flex}.call small{display:none}}
+@media(max-width:1180px){.vsep,.call{display:none}}
+@media(max-width:760px){.tb-loc{font-size:11.5px}.tb-loc svg{display:none}}
+.tb-loc{white-space:nowrap}@media(max-width:760px){.tb-more{display:none}}

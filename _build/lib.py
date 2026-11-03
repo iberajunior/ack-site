@@ -270,14 +270,15 @@ def header(active):
     return f'''<header id="hd">
   <div class="topbar"><div class="wrap tb">
     {socials("soc tb-soc")}
-    <a class="tb-aluno" href="{AREA_ALUNO}">{svg("cap")}Área do aluno</a>
+    <span class="tb-loc">{svg("pin")}Curitiba, PR<span class="tb-more"> · Atendimento em todo o Brasil</span></span>
   </div></div>
   <div class="bar"><div class="wrap nav">
     <a class="logo" href="index.html" aria-label="Instituto Ackler, página inicial"><img src="assets/logo.png" alt="Instituto Ackler · Valores e Resultados"></a>
     <nav class="menu">{"".join(items)}</nav>
     <div class="nav-cta">
+      <a class="nav-aluno" href="{AREA_ALUNO}">{svg("cap")}Área do aluno</a>
+      <span class="vsep" aria-hidden="true"></span>
       <a class="call" href="{WA}"><i>{svg("wa")}</i><span><small>Fale com um consultor</small><b>(41) 99576-0079</b></span></a>
-      <a class="btn btn-gold" href="contato.html">Agendar conversa</a>
     </div>
     <button class="burger" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
   </div></div>
