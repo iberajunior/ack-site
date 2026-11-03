@@ -435,3 +435,8 @@ header.scrolled .bar{border-bottom-color:rgba(236,232,255,.14)}
 .tb-soc{margin-left:-7px}
 .tb .tb-aluno{height:100%;border-left:0;padding:0}
 @media(max-width:760px){.tb{justify-content:space-between}}
+/* v6 · fundos do cabeçalho */
+header,header.scrolled{background:none;backdrop-filter:none}
+.topbar{background:var(--navy);opacity:1}
+.bar{background:rgba(3,0,32,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+header.scrolled .bar{background:rgba(3,0,32,.86)}

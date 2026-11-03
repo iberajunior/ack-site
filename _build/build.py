@@ -32,6 +32,7 @@ rep = [
  ('<a class="post rv" href="#">', '<a class="post rv" href="5s-por-onde-comecar.html">'),
  ('<a class="post rv d1" href="#">', '<a class="post rv d1" href="conteudos.html">'),
  ('<a class="post rv d2" href="#">', '<a class="post rv d2" href="conteudos.html">'),
+ ('<section class="sec" id="servicos">', '<section class="sec light" id="servicos">'),
  ('href="#contato">Quero um diagnóstico da minha empresa', 'href="contato.html?assunto=Consultoria">Quero um diagnóstico da minha empresa'),
 ]
 for a,b in rep:
