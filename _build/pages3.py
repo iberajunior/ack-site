@@ -151,17 +151,18 @@ POSTS=[("Indicadores","Quais indicadores uma PME deve acompanhar",I_B,"Poucos n�
  ("RH","Por que tantas contratações não passam da experiência",I_F,"Três ajustes simples no processo seletivo que reduzem a rotatividade.","6 min")]
 tr=[HOME,("Conteúdos","conteudos.html")]
 cats=["Todos","Melhoria contínua","Indicadores","Qualidade","Gestão","Planejamento","Pessoas","RH"]
-posts="".join(f'<a class="post rv d{i%3}" href="{ART}"><div class="ph"><img src="{img(im,800,500)}" alt="" loading="lazy"></div><div class="bd"><small>{c}</small><h3>{t}</h3><p>{p}</p><span class="by">Leitura de {m}</span></div></a>' for i,(c,t,im,p,m) in enumerate(POSTS))
+posts="".join(f'<a class="post rv d{i%3}" href="{ART}" data-cat="{c}"><div class="ph"><img src="{img(im,800,500)}" alt="" loading="lazy"></div><div class="bd"><small>{c}</small><h3>{t}</h3><p>{p}</p><span class="by">Leitura de {m}</span></div></a>' for i,(c,t,im,p,m) in enumerate(POSTS))
 body=phero(tr,"Conteúdos",'Gestão explicada <span class="it gold">sem complicação</span>',
  "Artigos práticos sobre melhoria contínua, indicadores, liderança e RH, para aplicar na sua empresa ainda nesta semana.",I_C,"","","short")
 body+=f'''
 <section class="sec light" style="padding-top:90px">
   <div class="wrap">
     <!-- Lista de exemplo. No site final, os artigos são publicados pela equipe ACK no painel (WordPress). -->
-    <div class="filters rv">{"".join(f'<button{" class=on" if i==0 else ""}>{c}</button>' for i,c in enumerate(cats))}</div>
-    <a class="feat rv" href="{ART}"><div class="ph"><img src="{img(I_A,1200,800)}" alt=""></div>
+    <div class="filters rv" id="bfilters">{"".join(f'<button type="button" data-f="{"todos" if i==0 else c}"{" class=on" if i==0 else ""}>{c}</button>' for i,c in enumerate(cats))}</div>
+    <a class="feat rv" href="{ART}" data-cat="Melhoria contínua"><div class="ph"><img src="{img(I_A,1200,800)}" alt=""></div>
       <div class="bd"><small>Melhoria contínua · Destaque</small><h3>5S: por onde começar na sua empresa</h3><p>Os primeiros passos para organizar o ambiente de trabalho e, mais difícil, manter o padrão depois da primeira semana.</p><span class="by">Josemar Thans Ackler · Leitura de 7 min</span></div></a>
-    <div class="posts">{posts}</div>
+    <div class="posts" id="bposts">{posts}</div>
+    <div class="empty" id="bempty">Ainda não há artigos nesta categoria. <a href="conteudos.html" style="color:var(--blue);font-weight:700">Ver todos os conteúdos</a></div>
     <div class="news rv"><div><h3>Receba os próximos artigos</h3><p>Um e-mail por mês, com conteúdo prático sobre gestão e melhoria contínua.</p></div>
       <form><input type="email" required placeholder="Seu melhor e-mail" aria-label="E-mail"><button class="btn btn-gold" style="border:0;cursor:pointer;font-family:inherit">Quero receber</button></form></div>
   </div>

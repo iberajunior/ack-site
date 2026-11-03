@@ -124,6 +124,14 @@ if(tt){const pr=$('.pr',tt);const f=()=>{const h=document.documentElement.scroll
 /* mega menu: fecha ao clicar fora no toque */
 $$('.dd-t').forEach(b=>b.addEventListener('click',()=>b.parentElement.classList.toggle('open')));
 
+
+/* conteúdos: filtro por categoria */
+const bf=$('#bfilters');
+if(bf){const bb=$$('button',bf),items=$$('[data-cat]',bf.parentElement).filter(x=>x.matches('.post,.feat')),em=$('#bempty');
+  bb.forEach(b=>b.onclick=()=>{bb.forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;let n=0;
+    items.forEach(it=>{const ok=f==='todos'||it.dataset.cat===f;it.style.display=ok?'':'none';if(ok){n++;it.classList.add('in')}});
+    if(em)em.style.display=n?'none':'block'});}
+
 /* ano no rodapé */
 $$('[data-year]').forEach(y=>y.textContent=new Date().getFullYear());
 })();
