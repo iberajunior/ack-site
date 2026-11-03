@@ -1,6 +1,6 @@
 import json, html as H
 
-SITE = "https://www.institutoackler.com.br"
+SITE = "https://www.ackinstitute.com.br"
 WA = "https://wa.me/5541995760079"
 AREA_ALUNO = "#area-do-aluno"  # PENDENTE: URL da área do aluno na EngagEd
 
@@ -79,14 +79,14 @@ def header(active):
     dl.append(f'<a href="{AREA_ALUNO}" style="color:var(--gold)">Área do aluno</a>')
     return f'''<header id="hd">
   <div class="wrap nav">
-    <a class="logo" href="index.html" aria-label="Instituto Ackler, página inicial"><img src="assets/logo.png" alt="Instituto Ackler · Valores e Resultados"></a>
+    <a class="logo" href="index.html" aria-label="ACK Institute, página inicial"><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"></a>
     <nav class="menu">{"".join(items)}</nav>
     <a class="btn btn-gold" href="contato.html">Falar com um consultor</a>
     <button class="burger" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
   </div>
 </header>
 <div class="drawer" id="drawer" role="dialog" aria-label="Menu">
-  <div class="top"><img src="assets/logo.png" alt="Instituto Ackler"><button class="x" aria-label="Fechar menu">×</button></div>
+  <div class="top"><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"><button class="x" aria-label="Fechar menu">×</button></div>
   <nav>{"".join(dl)}</nav>
   <a class="btn btn-gold" href="contato.html">Falar com um consultor {ARROW}</a>
 </div>'''
@@ -94,18 +94,18 @@ def header(active):
 FOOTER = f'''<footer>
   <div class="wrap">
     <div class="foot">
-      <div><img src="assets/logo.png" alt="Instituto Ackler"><p style="max-width:300px;line-height:1.6">Consultoria, treinamentos e cursos em gestão, governança e melhoria contínua. Curitiba, PR.</p></div>
+      <div><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"><p style="max-width:300px;line-height:1.6">Consultoria em gestão operacional, treinamentos e cursos em melhoria contínua. Curitiba e São Paulo.</p></div>
       <div><h4>Soluções</h4><a href="consultoria-empresarial.html">Consultoria Empresarial</a><a href="planejamento-estrategico.html">Planejamento Estratégico</a><a href="treinamentos.html">Treinamentos</a><a href="team-building.html">Team Building</a><a href="servicos-de-rh.html">Serviços de RH</a></div>
-      <div><h4>Instituto</h4><a href="sobre.html">Sobre</a><a href="cursos.html">Cursos</a><a href="conteudos.html">Conteúdos</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="contato.html">Contato</a></div>
-      <div><h4>Redes</h4><a href="https://www.linkedin.com/company/instituto-ackler">LinkedIn</a><a href="https://www.instagram.com/institutoackler/">Instagram</a><a href="https://www.youtube.com/@InstitutoAckler">YouTube</a><a href="http://facebook.com/institutoackler">Facebook</a></div>
+      <div><h4>A ACK</h4><a href="sobre.html">Sobre</a><a href="cursos.html">Cursos</a><a href="conteudos.html">Conteúdos</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="contato.html">Contato</a></div>
+      <div><h4>Redes</h4><a href="https://www.linkedin.com/company/ack-institute">LinkedIn</a><a href="https://www.instagram.com/ackinstitute/">Instagram</a><a href="https://www.youtube.com/channel/UC05vEXI78S1b1YlJLpZbnMg">YouTube</a><a href="https://twitter.com/ackinstitute">X</a></div>
     </div>
-    <div class="copy"><span>© <span data-year>2026</span> Instituto Ackler · Valores e Resultados</span><span>Política de privacidade · Cookies</span></div>
+    <div class="copy"><span>© <span data-year>2026</span> ACK Institute · Consultores Associados</span><span>Política de privacidade · Cookies</span></div>
   </div>
 </footer>
 <a class="wa" href="{WA}" aria-label="Conversar no WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg></a>'''
 
-ORG = {"@type":"ProfessionalService","@id":SITE+"/#org","name":"Instituto Ackler","url":SITE,"telephone":"+55 41 99576-0079","email":"contato@institutoackler.com.br",
-       "address":{"@type":"PostalAddress","streetAddress":"Rua do Herval, 636","addressLocality":"Curitiba","addressRegion":"PR","postalCode":"81530-420","addressCountry":"BR"}}
+ORG = {"@type":"ProfessionalService","@id":SITE+"/#org","name":"ACK Institute","alternateName":"Instituto Ackler","url":SITE,"telephone":"+55 41 99576-0079","email":"contato@institutoackler.com.br",
+       "address":[{"@type":"PostalAddress","streetAddress":"Alameda Presidente Taunay, 130 - Batel","addressLocality":"Curitiba","addressRegion":"PR","postalCode":"80420-180","addressCountry":"BR"},{"@type":"PostalAddress","streetAddress":"Av. Presidente Juscelino Kubitschek, 1327 - Itaim Bibi","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"}]}
 
 def crumbs_ld(trail):
     return {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":SITE+"/"+h} for i,(n,h) in enumerate(trail)]}
@@ -230,16 +230,16 @@ def bullets(items):
     return '<ul class="bullets">'+"".join(f'<li>{x}</li>' for x in items)+'</ul>'
 
 LOGOS = [("b2ec3b_b3c1f7812e4549b7bd5d8b05ded44332~mv2.png","Fundação Copel"),("b2ec3b_4ab3041f06cc469780744e2dad8fc5c5~mv2.png","Grupo Risotolândia"),("b2ec3b_41f7d3c23b3749c4a66e551cb622f6e1~mv2.jpeg","Outdoormidia"),("b2ec3b_7a638cb7745e42d5accaa4e8955540c2~mv2.png","Grupo Boticário"),("b2ec3b_17c372e255414bc081576a0636fa7da2~mv2.png","Cliente"),("b2ec3b_9b897b8df04342d6904cad922a7d01c1~mv2.png","Cliente"),("b2ec3b_53d8e52f7d554983ba6ae094748b99ec~mv2.png","Cliente"),("b2ec3b_3f11023a19f24f9b9f27add189e3ca4a~mv2.png","Cliente"),("b2ec3b_4486e6c75cb349e18c1490d40080f217~mv2.png","C12 Brasil"),("b2ec3b_a4e451e87dfb47aaae48b37c3a69a2df~mv2.png","Abigraf")]
-def logos(label="Empresas e parceiros que confiam no Instituto"):
+def logos(label="Empresas e parceiros que confiam na ACK"):
     ims="".join(f'<img src="https://static.wixstatic.com/media/{i}" alt="{a}" loading="lazy">' for i,a in LOGOS)
     return f'<div class="logos"><p>{label}</p><div class="marquee" id="marq"><div>{ims}</div></div></div>'
 
 # ===== Cabeçalho, rodapé e hero das internas (v2, ajustes de 02/11) =====
 SOCIAL = [
- ("LinkedIn","https://www.linkedin.com/company/instituto-ackler",'<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6v5.4h-4v-4.8c0-1.2 0-2.6-1.6-2.6s-1.9 1.3-1.9 2.5v4.9h-4z"/>'),
- ("Instagram","https://www.instagram.com/institutoackler/",'<path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zM17 5.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 3c-2.4 0-2.7 0-3.7.1-3.3.1-5.1 1.9-5.2 5.2C3 9.3 3 9.6 3 12s0 2.7.1 3.7c.1 3.3 1.9 5.1 5.2 5.2 1 .1 1.3.1 3.7.1s2.7 0 3.7-.1c3.3-.1 5.1-1.9 5.2-5.2.1-1 .1-1.3.1-3.7s0-2.7-.1-3.7c-.1-3.3-1.9-5.1-5.2-5.2C14.7 3 14.4 3 12 3zm0 1.6c2.4 0 2.6 0 3.6.1 2.4.1 3.6 1.3 3.7 3.7.1 1 .1 1.2.1 3.6s0 2.6-.1 3.6c-.1 2.4-1.3 3.6-3.7 3.7-1 .1-1.2.1-3.6.1s-2.6 0-3.6-.1c-2.4-.1-3.6-1.3-3.7-3.7-.1-1-.1-1.2-.1-3.6s0-2.6.1-3.6c.1-2.4 1.3-3.6 3.7-3.7 1-.1 1.2-.1 3.6-.1z"/>'),
- ("YouTube","https://www.youtube.com/@InstitutoAckler",'<path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/>'),
- ("Facebook","http://facebook.com/institutoackler",'<path d="M13.5 21v-8h2.7l.4-3.2h-3.1v-2c0-.9.3-1.6 1.6-1.6h1.7V3.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V13h2.8v8h3.3z"/>'),
+ ("LinkedIn","https://www.linkedin.com/company/ack-institute",'<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6v5.4h-4v-4.8c0-1.2 0-2.6-1.6-2.6s-1.9 1.3-1.9 2.5v4.9h-4z"/>'),
+ ("Instagram","https://www.instagram.com/ackinstitute/",'<path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zM17 5.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 3c-2.4 0-2.7 0-3.7.1-3.3.1-5.1 1.9-5.2 5.2C3 9.3 3 9.6 3 12s0 2.7.1 3.7c.1 3.3 1.9 5.1 5.2 5.2 1 .1 1.3.1 3.7.1s2.7 0 3.7-.1c3.3-.1 5.1-1.9 5.2-5.2.1-1 .1-1.3.1-3.7s0-2.7-.1-3.7c-.1-3.3-1.9-5.1-5.2-5.2C14.7 3 14.4 3 12 3zm0 1.6c2.4 0 2.6 0 3.6.1 2.4.1 3.6 1.3 3.7 3.7.1 1 .1 1.2.1 3.6s0 2.6-.1 3.6c-.1 2.4-1.3 3.6-3.7 3.7-1 .1-1.2.1-3.6.1s-2.6 0-3.6-.1c-2.4-.1-3.6-1.3-3.7-3.7-.1-1-.1-1.2-.1-3.6s0-2.6.1-3.6c.1-2.4 1.3-3.6 3.7-3.7 1-.1 1.2-.1 3.6-.1z"/>'),
+ ("YouTube","https://www.youtube.com/channel/UC05vEXI78S1b1YlJLpZbnMg",'<path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/>'),
+ ("X","https://twitter.com/ackinstitute",'<path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/>'),
 ]
 def socials(cls="soc"):
     return f'<div class="{cls}">'+"".join(f'<a href="{u}" aria-label="{n}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor">{p}</svg></a>' for n,u,p in SOCIAL)+'</div>'
@@ -270,10 +270,10 @@ def header(active):
     return f'''<header id="hd">
   <div class="topbar"><div class="wrap tb">
     {socials("soc tb-soc")}
-    <span class="tb-loc">{svg("pin")}Curitiba, PR<span class="tb-more"> · Atendimento em todo o Brasil</span></span>
+    <span class="tb-loc">{svg("pin")}Curitiba · São Paulo<span class="tb-more"> · Atendimento em todo o Brasil</span></span>
   </div></div>
   <div class="bar"><div class="wrap nav">
-    <a class="logo" href="index.html" aria-label="Instituto Ackler, página inicial"><img src="assets/logo.png" alt="Instituto Ackler · Valores e Resultados"></a>
+    <a class="logo" href="index.html" aria-label="ACK Institute, página inicial"><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"></a>
     <nav class="menu">{"".join(items)}</nav>
     <div class="nav-cta">
       <a class="nav-aluno" href="{AREA_ALUNO}">{svg("cap")}Área do aluno</a>
@@ -284,7 +284,7 @@ def header(active):
   </div></div>
 </header>
 <div class="drawer" id="drawer" role="dialog" aria-label="Menu">
-  <div class="top"><img src="assets/logo.png" alt="Instituto Ackler"><button class="x" aria-label="Fechar menu">×</button></div>
+  <div class="top"><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"><button class="x" aria-label="Fechar menu">×</button></div>
   <nav>{"".join(dl)}<a href="{AREA_ALUNO}" style="color:var(--gold)">Área do aluno</a></nav>
   <a class="btn btn-gold" href="contato.html">Agendar conversa {ARROW}</a>
   {socials("soc dsoc")}
@@ -296,12 +296,12 @@ WA_SVG = '<svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6
 FOOTER = f'''<footer>
   <div class="wrap">
     <div class="foot">
-      <div><img src="assets/logo.png" alt="Instituto Ackler"><p style="max-width:300px;line-height:1.6">Consultoria, treinamentos e cursos em gestão, governança e melhoria contínua. Curitiba, PR.</p>{socials("soc fsoc")}</div>
+      <div><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"><p style="max-width:300px;line-height:1.6">Consultoria em gestão operacional, treinamentos e cursos em melhoria contínua. Curitiba e São Paulo.</p>{socials("soc fsoc")}</div>
       <div><h4>Soluções</h4><a href="consultoria-empresarial.html">Consultoria Empresarial</a><a href="planejamento-estrategico.html">Planejamento Estratégico</a><a href="treinamentos.html">Treinamentos</a><a href="team-building.html">Team Building</a><a href="servicos-de-rh.html">Serviços de RH</a></div>
-      <div><h4>Instituto</h4><a href="sobre.html">Sobre</a><a href="cursos.html">Cursos</a><a href="conteudos.html">Conteúdos</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="{AREA_ALUNO}">Área do aluno</a></div>
-      <div><h4>Contato</h4><a href="{WA}">(41) 99576-0079</a><a href="mailto:contato@institutoackler.com.br">contato@institutoackler.com.br</a><a href="contato.html">Rua do Herval, 636 · Curitiba, PR</a></div>
+      <div><h4>A ACK</h4><a href="sobre.html">Sobre</a><a href="cursos.html">Cursos</a><a href="conteudos.html">Conteúdos</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="{AREA_ALUNO}">Área do aluno</a></div>
+      <div><h4>Contato</h4><a href="{WA}">(41) 99576-0079</a><a href="mailto:contato@institutoackler.com.br">contato@institutoackler.com.br</a><a href="contato.html">Curitiba · Alameda Pres. Taunay, 130</a><a href="contato.html">São Paulo · Av. Pres. Juscelino Kubitschek, 1327</a></div>
     </div>
-    <div class="copy"><span>© <span data-year>2026</span> Instituto Ackler · Valores e Resultados</span><span class="made">Feito com {HEART} por <a href="https://agenciakroma.com.br" target="_blank" rel="noopener">Agência KROMA</a></span></div>
+    <div class="copy"><span>© <span data-year>2026</span> ACK Institute · Consultores Associados</span><span class="made">Feito com {HEART} por <a href="https://agenciakroma.com.br" target="_blank" rel="noopener">Agência KROMA</a></span></div>
   </div>
 </footer>
 <button class="totop" id="totop" type="button" aria-label="Voltar ao topo"><svg class="ring" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22"/><circle class="pr" cx="24" cy="24" r="22"/></svg><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
@@ -330,3 +330,53 @@ def phero(trail, eyebrow, h1, lead, image, ctas="", chips="", cls=""):
     </div>
   </div>
 </section>'''
+
+# ===== Conteúdo vindo do site ackinstitute.com.br (03/11) =====
+def wix(id_, w=800, h=800, al="c"):
+    return f"https://static.wixstatic.com/media/{id_}/v1/fill/w_{w},h_{h},al_{al},q_85/img.jpg"
+
+JOSEMAR = "b2ec3b_711d3ba553de443e9ed74e8164ab6a15~mv2.jpg"
+TEAM = [
+ (JOSEMAR,"Josemar Ackler","CEO","Mais de 35 anos em grandes indústrias no Brasil e no exterior, em Melhoria Contínua, Produção, Qualidade e Engenharia. Foi Gerente de Qualidade e Produção na Tetra Pak e liderou projetos de transformação em supply chain e manufatura na Mondelez."),
+ ("b2ec3b_f6fa55fb171b4ca8aba7eda0cee4beb8~mv2.jpg","Kauê Beluzzo","Diretor Executivo","Engenheiro de Materiais com MBA em gestão e mais de 10 anos em melhoria contínua na Tetra Pak, Mondelez International, Yara e Angeloni, onde gerenciou equipes de mais de mil colaboradores."),
+ ("b2ec3b_2946520d97844ec597e165d80fc18aae~mv2.jpg","Karen Laís Tavares Ackler","Diretora Executiva","Advogada e consultora empresarial, especialista em Direito Público e Constitucional, com atuação em Compliance, práticas de ESG e Direito Societário."),
+ ("b2ec3b_ec56d843db7e4ba0ada4ac8c2a4745e5~mv2.jpg","Thayson Bruno Ackler","Diretor Comercial","Formado pelo Centro Europeu, com atuação em marketing, branding e vendas B2B e B2C. Empreende desde os 18 anos e integra marketing e negócios com foco em crescimento."),
+ ("b2ec3b_ab35938a9771424991abfa9755955166~mv2.jpeg","Vladimir Bosio","Conselheiro","Mais de 25 anos em gestão estratégica, operações e supply chain. Foi VP de Supply Chain da InterCement, Diretor de Operações na AMCOR e, por mais de 20 anos na Tetra Pak, Diretor de Fábrica e de WCM."),
+ ("b2ec3b_3f88fc12fc2f467da191af0fc848e9f7~mv2.jpeg","Felipe Bernardi","Consultor de Operações","Engenheiro de Produção com especialização em gerenciamento empresarial e de projetos. Entre seus cases, o aumento de mais de 40% na produtividade do acabamento da Tera Papéis."),
+]
+def team_html():
+    cards="".join(f'''<article class="tm rv d{i%3}"><div class="tm-ph"><img src="{wix(p,600,720,'t')}" alt="{n}" loading="lazy"></div><div class="tm-bd"><small>{r}</small><h3>{n}</h3><p>{b}</p></div></article>''' for i,(p,n,r,b) in enumerate(TEAM))
+    return f'<div class="team">{cards}</div>'
+
+TESTI = [
+ ("b2ec3b_c893f0fa74774e7b8ae2a0ec9f006a74~mv2.jpg","Packpar Embalagens","Sérgio e Glaynes","CEO e Diretora","O Instituto transformou nossa empresa. Começamos com a implementação do 5S e fomos muito além do que imaginávamos, construindo uma empresa autogerenciável, com processos e governança desde a operação até a área estratégica."),
+ ("b2ec3b_7176a0f37b904e599700edf7b4bb1e77~mv2.jpeg","Fundação Copel","Vivian Fanton","Gestora de MC","Trabalho realizado de forma extremamente satisfatória. Agradecemos a parceria com a ACK e deixamos as portas abertas para novas demandas devido à qualidade da entrega."),
+ ("b2ec3b_0938186f8a254d35b073f568335b429e~mv2.jpeg","Brado Logística","Raquel Gárcia","Gestora de Melhoria Contínua","O trabalho superou as expectativas, o Weliton e o Kauê personalizaram desde o atendimento até as entregas, para poder atender a Brado com excelência. Fica o feedback positivo e portas abertas para novos projetos."),
+]
+def testimonials_html(light=False):
+    q='<svg class="q" viewBox="0 0 24 24" fill="currentColor"><path d="M9.6 6C6.5 7.4 4.5 10 4.5 13.6V18h5.6v-5.6H7.3c.1-2.1 1.3-3.7 3.4-4.7L9.6 6zm9.4 0c-3.1 1.4-5.1 4-5.1 7.6V18h5.6v-5.6h-2.8c.1-2.1 1.3-3.7 3.4-4.7L19 6z"/></svg>'
+    cards="".join(f'''<figure class="testi rv d{i%3}"><div class="testi-ph"><img src="{wix(p,720,420)}" alt="Equipe {c} com a ACK" loading="lazy"><span>{c}</span></div><blockquote>{q}<p>{t}</p></blockquote><figcaption><b>{n}</b><small>{r} · {c}</small></figcaption></figure>''' for i,(p,c,n,r,t) in enumerate(TESTI))
+    return f'<div class="testis">{cards}</div>'
+
+def testimonials_section(cls=""):
+    return f'''<section class="sec {cls}" id="depoimentos">
+  <div class="wrap">
+    {sec_head("Depoimentos",'O que nossos clientes <span class="it gold">dizem da gente</span>',"Projetos de melhoria contínua, governança e 5S contados por quem viveu a transformação.")}
+    {testimonials_html()}
+  </div>
+</section>'''
+
+LOGOS = [("b2ec3b_bd3b6d50a4a9414aa1fcbeff8c4dae95~mv2.png","Band"),("b2ec3b_492630f1242a4963bfcd7d8aab898618~mv2.png","Grupo Risotolândia"),("b2ec3b_e27dbb60a5f746df90a4dff1ebb42538~mv2.png","Brado Logística"),("b2ec3b_ffbf732b431942b0a13bce409ec99a67~mv2.png","Gerar"),("b2ec3b_5267c0ccd0074df5a8b8d78c9777522a~mv2.png","Plastilit"),("b2ec3b_323d3f9eca724ab297552e5d0077e31a~mv2.png","Castrolanda"),("b2ec3b_eb24fd5a8b4e451cbf649541eb9b12e8~mv2.png","Fundação Copel"),("b2ec3b_a5b57f09c66a4997837848a502abf114~mv2.png","Grupo Boticário"),("b2ec3b_61f4cef028444930877e428802601edb~mv2.png","CNA"),("b2ec3b_41f7d3c23b3749c4a66e551cb622f6e1~mv2.jpeg","Outdoormidia"),("b2ec3b_4486e6c75cb349e18c1490d40080f217~mv2.png","C12 Brasil"),("b2ec3b_a4e451e87dfb47aaae48b37c3a69a2df~mv2.png","Abigraf")]
+def logos_imgs():
+    return "".join(f'<img src="https://static.wixstatic.com/media/{i}/v1/fit/w_320,h_160,q_90/logo.png" alt="{a}" loading="lazy">' for i,a in LOGOS)
+def logos(label="Empresas que confiam na ACK"):
+    return f'<div class="logos"><p>{label}</p><div class="marquee" id="marq"><div>{logos_imgs()}</div></div></div>'
+
+NEWS = [
+ ("988734_90839c9c6c8c4e2dbcd8d12c7f081cbd~mv2.jpg","17 out 2025","Eventos","ACK Institute é patrocinadora master do Discuta Lean Curitiba 2025","A ACK apoiou como patrocinadora master um dos principais encontros de Lean da região."),
+ ("b2ec3b_a852c1191f144a999cc6776fbd128753~mv2.jpg","24 set 2025","Team Building","Team building com Lego no Grupo Risotolândia","Mais de 45 profissionais do PCP em uma dinâmica para fortalecer colaboração, comunicação e confiança."),
+ ("b2ec3b_7efa3035e2e54a60b718661bd78c96f2~mv2.jpeg","24 set 2025","Clientes","Almoço com nossas clientes da Convexa","Camila e Larissa iniciaram o projeto em 2024/25 e renovaram com a ACK para 2025/26. Jornada de melhoria contínua!"),
+]
+SECTORS = [("brief","Escritórios e serviços corporativos"),("chart","Indústria e manufatura"),("screen","Tecnologia e inovação"),("flow","Construção civil e engenharia"),("link","Distribuidoras, varejo e e-commerce"),("heart","Saúde, bem-estar e educação"),("shield","Poder público")]
+def sectors_html():
+    return '<div class="sectors">'+"".join(f'<div class="sector rv d{i%3}"><i>{ico(k)}</i><span>{t}</span></div>' for i,(k,t) in enumerate(SECTORS))+'</div>'

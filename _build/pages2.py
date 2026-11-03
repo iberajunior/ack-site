@@ -64,7 +64,7 @@ body+=f'''
 {faq_section(FAQ_T,'Dúvidas sobre <span class="it gold">treinamentos</span>')}
 {final('Qual é o desafio da <span class="it gold">sua equipe?</span>',"Conte o tema, o número de pessoas e o resultado que você espera. A gente monta a proposta.","Treinamentos")}
 '''
-P["treinamentos.html"]=("Treinamentos In Company: 5S, Causa Raiz, PDCA, Lean e ISO · Instituto Ackler",
+P["treinamentos.html"]=("Treinamentos In Company: 5S, Causa Raiz, PDCA, Lean e ISO · ACK Institute",
  "Treinamentos in company em 5S, análise de causa raiz, PDCA, mapeamento de processos, Lean, normas ISO, comunicação e gestão do tempo. Conteúdo adaptado à sua empresa.",
  "treinamentos.html",body,tr,[{"@type":"Service","name":"Treinamentos In Company","serviceType":"Treinamento corporativo","provider":{"@id":SITE+"/#org"},"areaServed":"BR",
    "hasOfferCatalog":{"@type":"OfferCatalog","name":"Temas de treinamento","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":t}} for t,*_ in TEMAS]}},faq_ld(FAQ_T)])
@@ -82,14 +82,15 @@ body+=f'''
 <section class="sec light">
   <div class="wrap split">
     <div class="tilt rv"><div class="tilt-in">
-      <img src="{img(I_G,1000,1100)}" alt="Equipe em atividade de team building" loading="lazy">
-      <div class="tilt-badge"><span>In Company</span><span>Offsite</span><span>Times de alta performance</span></div>
+      <img src="{wix("b2ec3b_a852c1191f144a999cc6776fbd128753~mv2.jpg",1000,1100)}" alt="Team building com Lego no Grupo Risotolândia" loading="lazy">
+      <div class="tilt-badge"><span>Case Grupo Risotolândia</span><span>45 profissionais de PCP</span><span>Dinâmica com Lego</span></div>
     </div></div>
     <div>
       <span class="eyebrow rv">Por que fazer</span>
       <h2 class="rv d1" style="margin:18px 0 22px">O que muda na equipe <span class="it" style="color:var(--blue)">depois da vivência</span></h2>
       <p class="lead rv d2">Problemas de equipe raramente se resolvem com mais uma reunião. Em situações práticas, as pessoas enxergam como se comunicam, como decidem e como reagem sob pressão.</p>
       {bullets(["Comunicação mais direta entre áreas e níveis hierárquicos","Mais cooperação e menos disputa interna","Líderes que entendem melhor o próprio time","Compromisso coletivo com metas e resultados"])}
+      <p class="rv" style="margin-top:26px;color:#5c5a80;line-height:1.65;font-size:15px">No Grupo Risotolândia, reunimos mais de 45 profissionais do PCP em uma dinâmica com Lego desenhada para fortalecer a colaboração, a comunicação e a confiança.</p>
     </div>
   </div>
 </section>
@@ -113,7 +114,7 @@ body+=f'''
 {faq_section(FAQ_TB,'Dúvidas sobre <span class="it gold">team building</span>')}
 {final('Vamos planejar a próxima <span class="it gold">vivência da sua equipe?</span>',"Conte quantas pessoas, o objetivo e o formato que você imagina. A gente monta a proposta.","Team Building")}
 '''
-P["team-building.html"]=("Team Building In Company e Offsite para equipes · Instituto Ackler",
+P["team-building.html"]=("Team Building In Company e Offsite para equipes · ACK Institute",
  "Programas de team building in company e offsite para melhorar comunicação, cooperação, liderança e compromisso da equipe com resultados. Curitiba e região.",
  "team-building.html",body,tr,[{"@type":"Service","name":"Team Building","serviceType":"Team building corporativo","provider":{"@id":SITE+"/#org"},"areaServed":"BR"},faq_ld(FAQ_TB)])
 
@@ -151,6 +152,6 @@ body+=f'''
 {faq_section(FAQ_RH,'Dúvidas sobre <span class="it gold">serviços de RH</span>')}
 {final('Pessoas certas, <span class="it gold">no lugar certo.</span>',"Conte o que está pesando no RH da sua empresa e a gente indica por onde começar.","RH")}
 '''
-P["servicos-de-rh.html"]=("Serviços de RH: Recrutamento, BPO e Perfil Comportamental · Instituto Ackler",
- "Recrutamento e seleção, BPO em RH, análise de perfis comportamentais e consultoria para estruturar o departamento de pessoas. Curitiba, PR.",
+P["servicos-de-rh.html"]=("Serviços de RH: Recrutamento, BPO e Perfil Comportamental · ACK Institute",
+ "Recrutamento e seleção, BPO em RH, análise de perfis comportamentais e consultoria para estruturar o departamento de pessoas. Curitiba e São Paulo.",
  "consultoria-empresarial.html",body,tr,[{"@type":"Service","name":"Serviços de RH","serviceType":"Recrutamento e seleção, BPO em RH, perfis comportamentais","provider":{"@id":SITE+"/#org"},"areaServed":"BR"},faq_ld(FAQ_RH)])

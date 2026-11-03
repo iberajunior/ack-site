@@ -7,26 +7,26 @@ HOME = ("Início","")
 tr=[HOME,("Sobre","sobre.html")]
 VALUES=[("star","Superar expectativas","Entregar o combinado e um pouco mais: o cliente percebe a diferença no resultado, não no discurso."),
         ("shield","Agir com integridade","Recomendamos só o que a empresa precisa. Se o problema for outro, a gente fala."),
-        ("link","Criar conexões","Aproximamos liderança e equipe, e conectamos o cliente a parceiros quando faz sentido."),
         ("book","Nunca parar de aprender","Quem ensina melhoria contínua precisa praticar. Revisamos nossos próprios métodos a cada projeto."),
-        ("heart","Priorizar o bem-estar","Produtividade que esgota as pessoas não se sustenta. Organização também é cuidado com quem trabalha.")]
-body=phero(tr,"Sobre o Instituto",'Experiência de indústria a serviço <span class="it gold">da sua empresa</span>',
-  "O Instituto Ackler nasceu de 35 anos de trabalho dentro de grandes indústrias, no Brasil e no exterior. Hoje leva esse método para empresas de todos os tamanhos.",I_D,
-  btn("Conversar com o Instituto","contato.html")+btn("Ver o que fazemos","consultoria-empresarial.html",False))
+        ("loop","Flexibilidade","Cada negócio tem sua realidade. Ajustamos método, ritmo e escopo ao momento de cada empresa."),
+        ("heart","Valorizar a vida","Produtividade que esgota as pessoas não se sustenta. Organização também é cuidado com quem trabalha.")]
+body=phero(tr,"Sobre a ACK",'Experiência de indústria a serviço <span class="it gold">da sua empresa</span>',
+  "Consultores com trajetória em indústrias globais como Tetra Pak e Mondelez, e vivência no dia a dia de pequenas e médias empresas. Levamos TPM, WCM e Lean para a prática.",I_D,
+  btn("Conversar com a ACK","contato.html")+btn("Ver o que fazemos","consultoria-empresarial.html",False))
 body+=f'''
 <section class="sec">
   <div class="wrap about">
     <div class="about-img rv">
-      <img src="{img(I_D,900,1120)}" alt="Josemar Thans Ackler, fundador do Instituto Ackler" loading="lazy">
-      <div class="sig"><b>Josemar Thans Ackler</b><small>Fundador do Instituto Ackler</small></div>
+      <img src="{wix(JOSEMAR,900,1040,'t')}" alt="Josemar Ackler, fundador e CEO da ACK Institute" loading="lazy">
+      <div class="sig"><b>Josemar Thans Ackler</b><small>Fundador e CEO da ACK Institute</small></div>
     </div>
     <div>
-      <span class="eyebrow rv">Nossa história</span>
+      <span class="eyebrow rv">Nossa jornada</span>
       <blockquote class="rv d1">Nascemos para cuidar de <em>pessoas</em> e de <em>negócios</em>. Uma empresa organizada produz mais e cuida melhor de quem trabalha nela.</blockquote>
       <div class="prose rv d2">
-        <p>Josemar Thans Ackler passou <strong>35 anos em grandes indústrias</strong>, dentro e fora do Brasil, implantando rotinas de gestão, indicadores e programas de melhoria contínua.</p>
-        <p>Nesse caminho, percebeu que as mesmas ferramentas que funcionam numa grande planta resolvem problemas de uma pequena empresa, desde que aplicadas no tamanho certo. Foi para isso que criou o Instituto: ajudar empresas de qualquer segmento a <strong>melhorar a produtividade sem esquecer a qualidade de vida</strong> das pessoas envolvidas.</p>
-        <p>Hoje o Instituto atua em quatro frentes: consultoria empresarial, treinamentos in company, cursos para profissionais e serviços de RH.</p>
+        <p>A ACK oferece soluções sob medida para cada empresa, entendendo que cada negócio tem sua própria realidade. Nossa atuação se apoia nas metodologias mais consolidadas do mercado, <strong>TPM, WCM e Lean</strong>, aplicadas de forma prática e evolutiva, numa jornada que leva a teoria para o dia a dia.</p>
+        <p>O maior desafio das organizações está em alinhar pessoas, cultura e processos, e é aí que está a nossa força. Com experiência em cenários muito diferentes, apoiamos desde demandas simples até transformações de alta complexidade.</p>
+        <p>O fundador, <strong>Josemar Ackler</strong>, soma mais de 35 anos em grandes indústrias no Brasil e no exterior. Na Tetra Pak, uma das pioneiras em TPM e WCM, foi Gerente de Qualidade e Produção. Depois, conduziu o piloto de implantação na Mondelez, em uma planta com mais de 5 mil colaboradores.</p>
       </div>
     </div>
   </div>
@@ -43,8 +43,22 @@ body+=f'''
   <div class="wrap">
     {sec_head("Nossos valores",'O que guia <span class="it gold">cada projeto</span>',"Cinco princípios que aparecem na forma como a gente conversa, propõe e entrega.")}
     <div class="cards c3">{"".join(f'<div class="card sm rv d{i%3}"><span class="num">{i+1:02d}</span><div class="ico">{ico(k)}</div><h3>{t}</h3><p>{p}</p></div>' for i,(k,t,p) in enumerate(VALUES))}
-      <a class="card sm rv d2" href="contato.html" style="background:linear-gradient(160deg,rgba(255,184,0,.16),rgba(255,184,0,.03));border-color:rgba(255,184,0,.35)"><div class="ico" style="background:rgba(255,184,0,.18);color:var(--gold)">{ico("brief")}</div><h3>Quer ver isso na prática?</h3><p>Conte o momento da sua empresa e receba uma indicação da melhor frente de trabalho.</p><span class="more">Falar com o Instituto →</span></a>
+      <a class="card sm rv d2" href="contato.html" style="background:linear-gradient(160deg,rgba(255,184,0,.16),rgba(255,184,0,.03));border-color:rgba(255,184,0,.35)"><div class="ico" style="background:rgba(255,184,0,.18);color:var(--gold)">{ico("brief")}</div><h3>Quer ver isso na prática?</h3><p>Conte o momento da sua empresa e receba uma indicação da melhor frente de trabalho.</p><span class="more">Falar com a ACK →</span></a>
     </div>
+  </div>
+</section>
+
+<section class="sec light" id="time">
+  <div class="wrap">
+    {sec_head("Time de gestão e conselho",'Quem conduz <span class="it" style="color:var(--blue)">os projetos</span>',"Experiência em indústrias globais somada à vivência no atendimento a pequenas e médias empresas.")}
+    {team_html()}
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap split" style="align-items:center">
+    <div><span class="eyebrow rv">Visão</span><h2 class="rv d1" style="margin-top:18px">Impacto que <span class="it gold">dura</span></h2></div>
+    <p class="lead rv d2">Ser uma organização reconhecida pelo impacto duradouro, por meio de soluções personalizadas, cases de sucesso e uma rede de especialistas comprometidos com a excelência.</p>
   </div>
 </section>
 
@@ -55,11 +69,12 @@ body+=f'''
   </div>
 </section>
 {logos()}
+{testimonials_section()}
 {final('Conte o desafio da sua empresa. <span class="it gold">A gente mostra o caminho.</span>',"Uma conversa inicial, sem compromisso, para entender o momento da empresa e indicar a melhor frente de trabalho.")}
 '''
-P["sobre.html"]=("Sobre o Instituto Ackler · 35 anos de experiência industrial em gestão",
- "Conheça o Instituto Ackler, fundado por Josemar Thans Ackler após 35 anos em grandes indústrias. Consultoria, treinamentos, cursos e RH em Curitiba, PR.",
- "sobre.html",body,tr,[{"@type":"AboutPage","name":"Sobre o Instituto Ackler","about":{"@id":SITE+"/#org"}},{"@type":"Person","name":"Josemar Thans Ackler","jobTitle":"Fundador","worksFor":{"@id":SITE+"/#org"}}])
+P["sobre.html"]=("Sobre a ACK Institute · 35 anos de experiência industrial em gestão",
+ "Conheça a ACK Institute, fundada por Josemar Thans Ackler após 35 anos em grandes indústrias. Consultoria, treinamentos, cursos e RH. Curitiba e São Paulo.",
+ "sobre.html",body,tr,[{"@type":"AboutPage","name":"Sobre a ACK Institute","about":{"@id":SITE+"/#org"}},{"@type":"Person","name":"Josemar Thans Ackler","jobTitle":"Fundador","worksFor":{"@id":SITE+"/#org"}}])
 
 # ============ CONSULTORIA ============
 tr=[HOME,("Consultoria Empresarial","consultoria-empresarial.html")]
@@ -88,13 +103,20 @@ body+=f'''
 
 <section class="sec light">
   <div class="wrap">
-    {sec_head("O que a consultoria entrega",'Frentes que <span class="it" style="color:var(--blue)">combinamos</span> conforme o seu momento')}
-    {cards([("target","Planejamento estratégico","Onde a empresa está, aonde quer chegar e quais metas mostram o caminho.",[],"Projeto de 30 dias","planejamento-estrategico.html"),
-            ("chart","Indicadores e rotina de gestão","Poucos números bem escolhidos e reuniões curtas para acompanhar cada um.",[],"",None),
-            ("flow","Mapeamento de processos","Desenhamos como o trabalho acontece hoje para eliminar retrabalho e esperas.",[],"",None),
-            ("shield","Governança","Papéis, responsabilidades e regras de decisão claras entre sócios e gestores.",[],"",None),
-            ("loop","Melhoria contínua","5S, PDCA e análise de causa raiz aplicados no dia a dia da operação.",[],"Ver treinamentos","treinamentos.html"),
-            ("people","Desenvolvimento da liderança","Gestores preparados para conduzir a equipe e sustentar a rotina sem o consultor.",[],"",None)])}
+    {sec_head("Nossas soluções",'Serviços para cada etapa da <span class="it" style="color:var(--blue)">maturidade operacional</span>',"Desenhados sob medida para gerar resultados práticos e mensuráveis, com base em TPM, WCM e Lean.")}
+    {cards([("loop","Excelência Operacional","Diagnóstico e melhoria de processos para cortar desperdícios, eliminar gargalos e aumentar a produtividade real da operação.",[],"",None),
+            ("chart","Indicadores e Performance","KPIs estratégicos para transformar metas em resultados, com foco em análise e tomada de decisão.",[],"",None),
+            ("shield","Governança e Organização","Estruturas de gestão, rotinas e rituais que garantem foco, alinhamento e autonomia em todas as áreas.",[],"",None),
+            ("people","Desenvolvimento de Lideranças","Treinamentos e mentorias práticas para formar líderes mais estratégicos, capazes de engajar e entregar.",[],"Ver treinamentos","treinamentos.html"),
+            ("flow","Cultura de Melhoria Contínua","Mindset e ferramentas como PDCA, ACR, Kaizen e 5S para evoluir processos e comportamentos de forma contínua.",[],"",None),
+            ("target","Planejamento Estratégico","Planos de ação com visão de futuro, metas claras e priorização do que realmente importa.",[],"Projeto de 30 dias","planejamento-estrategico.html")])}
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap">
+    {sec_head("Ramos de atuação",'Do escritório <span class="it gold">ao chão de fábrica</span>',"Empresas que cresceram rápido e hoje enfrentam gargalos, falhas recorrentes e falta de processos, em diferentes setores.")}
+    {sectors_html()}
   </div>
 </section>
 
@@ -121,8 +143,8 @@ body+=f'''
 {faq_section(FAQ_C)}
 {final('Conte o desafio da sua empresa. <span class="it gold">A gente mostra o caminho.</span>',"Uma conversa inicial, sem compromisso, para entender o momento da empresa e indicar o formato de consultoria mais adequado.","Consultoria")}
 '''
-P["consultoria-empresarial.html"]=("Consultoria Empresarial em Gestão e Governança · Instituto Ackler",
- "Consultoria em gestão, governança, indicadores e processos para pequenas empresas e grandes indústrias. Diagnóstico, plano e acompanhamento. Curitiba, PR.",
+P["consultoria-empresarial.html"]=("Consultoria Empresarial em Gestão e Governança · ACK Institute",
+ "Consultoria em gestão, governança, indicadores e processos para pequenas empresas e grandes indústrias. Diagnóstico, plano e acompanhamento. Curitiba e São Paulo.",
  "consultoria-empresarial.html",body,tr,[{"@type":"Service","name":"Consultoria Empresarial","serviceType":"Consultoria em gestão e governança","provider":{"@id":SITE+"/#org"},"areaServed":"BR","audience":{"@type":"BusinessAudience","name":"Pequenas e médias empresas e indústrias"}},faq_ld(FAQ_C)])
 
 # ============ PLANEJAMENTO 30 DIAS ============
@@ -130,7 +152,7 @@ tr=[HOME,("Consultoria","consultoria-empresarial.html"),("Planejamento Estratég
 FAQ_P=[("O plano fica pronto mesmo em 30 dias?","Sim. O projeto é organizado em quatro semanas, com encontros marcados desde o início. Para isso funcionar, combinamos a agenda da liderança logo na primeira reunião."),
  ("Quem da empresa precisa participar?","O dono ou diretor e os principais gestores. Em empresas menores, às vezes são duas ou três pessoas. O importante é que quem decide esteja presente."),
  ("Serve para pequena empresa?","Serve. O projeto foi pensado justamente para empresas que nunca fizeram um planejamento formal e precisam de um plano simples de acompanhar."),
- ("E depois dos 30 dias?","Você sai com o plano e a rotina de acompanhamento definidos. Se quiser, o Instituto continua acompanhando as reuniões de resultado ao longo do ano.")]
+ ("E depois dos 30 dias?","Você sai com o plano e a rotina de acompanhamento definidos. Se quiser, a ACK continua acompanhando as reuniões de resultado ao longo do ano.")]
 body=phero(tr,"Projeto de 30 dias",'Um <span class="it gold">2027</span> planejado, não improvisado',
  "Em 30 dias, montamos com você um plano estratégico sob medida: onde a empresa está, aonde quer chegar e quais indicadores vão mostrar o caminho.",I_E,
  btn("Quero o meu plano em 30 dias","contato.html?assunto=Planejamento")+btn("Ver as 4 semanas","#semanas",False),
@@ -170,6 +192,6 @@ body+=f'''
 {faq_section(FAQ_P,'Dúvidas sobre o <span class="it gold">projeto de 30 dias</span>')}
 {final('Comece o ano com <span class="it gold">um plano na mão.</span>',"Conte um pouco sobre a sua empresa e a gente verifica a próxima data disponível para iniciar o projeto.","Planejamento")}
 '''
-P["planejamento-estrategico.html"]=("Planejamento Estratégico em 30 dias para empresas · Instituto Ackler",
+P["planejamento-estrategico.html"]=("Planejamento Estratégico em 30 dias para empresas · ACK Institute",
  "Projeto de Planejamento Estratégico em 30 dias: diagnóstico, objetivos, metas, indicadores e plano de ação para pequenas e médias empresas e indústrias.",
  "consultoria-empresarial.html",body,tr,[{"@type":"Service","name":"Planejamento Estratégico em 30 dias","serviceType":"Planejamento estratégico","provider":{"@id":SITE+"/#org"},"areaServed":"BR"},faq_ld(FAQ_P)])

@@ -699,3 +699,61 @@ header.scrolled .bar{background:rgba(3,0,32,.86)}
 @media(max-width:760px){.tb-loc{font-size:11.5px}.tb-loc svg{display:none}}
 .tb-loc{white-space:nowrap}@media(max-width:760px){.tb-more{display:none}}
 header.scrolled .topbar{height:0;border-bottom:0;opacity:0;pointer-events:none}
+/* v8 · nova logo ACK Institute (horizontal) */
+.logo img{height:42px;width:auto}
+header.scrolled .logo img{height:34px}
+.foot img{height:46px;width:auto}
+.drawer .top img{height:34px}
+@media(max-width:600px){.logo img{height:34px}header.scrolled .logo img{height:30px}}
+
+/* v9 · time, depoimentos, setores e notícias (conteúdo do ackinstitute.com.br) */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:1000px){.team{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.team{grid-template-columns:1fr}}
+.tm{border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid #e6e4f3;display:flex;flex-direction:column;transition:transform .4s,box-shadow .4s}
+.tm:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(3,0,32,.35)}
+.tm-ph{aspect-ratio:5/5.4;overflow:hidden;background:#dcdaee}
+.tm-ph img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s}
+.tm:hover .tm-ph img{transform:scale(1.04)}
+.tm-bd{padding:24px 24px 28px}
+.tm-bd small{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.tm-bd h3{font-size:25px;color:var(--ink);margin:8px 0 10px}
+.tm-bd p{font-size:14.5px;line-height:1.6;color:#5c5a80}
+
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:1000px){.testis{grid-template-columns:1fr}}
+.testi{margin:0;display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02))}
+.testi-ph{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--navy-3)}
+.testi-ph img{width:100%;height:100%;object-fit:cover}
+.testi-ph span{position:absolute;left:16px;bottom:14px;padding:7px 12px;border-radius:999px;background:rgba(3,0,32,.8);backdrop-filter:blur(6px);font-size:12px;font-weight:800;letter-spacing:.06em;color:#fff}
+.testi blockquote{flex:1;margin:0;padding:26px 26px 10px;font-family:var(--sans);font-size:15.5px;line-height:1.7;color:#d9d6f3}
+.testi blockquote .q{width:28px;height:28px;color:var(--gold);margin-bottom:10px;display:block}
+.testi blockquote p{margin:0}
+.testi figcaption{padding:16px 26px 26px;border-top:1px solid var(--line);margin:0 0 0}
+.testi figcaption b{display:block;font-size:15px;color:#fff}
+.testi figcaption small{font-size:13px;color:var(--muted)}
+.light .testi{background:#fff;border-color:#e6e4f3}
+.light .testi blockquote{color:#33315a}
+.light .testi figcaption{border-color:#e6e4f3}
+.light .testi figcaption b{color:var(--ink)}
+
+.sectors{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:1000px){.sectors{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.sectors{grid-template-columns:1fr}}
+.sector{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-weight:700;font-size:15px}
+.sector i{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;background:rgba(255,184,0,.12);color:var(--gold)}
+.sector i svg{width:22px;height:22px}
+.light .sector{background:#fff;border-color:#e6e4f3;color:var(--ink)}
+
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:70px}
+@media(max-width:900px){.news-grid{grid-template-columns:1fr}}
+.news-card{border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid #e6e4f3}
+.news-card .ph{aspect-ratio:16/10;overflow:hidden;background:#dcdaee}
+.news-card .ph img{width:100%;height:100%;object-fit:cover}
+.news-card .bd{padding:22px 24px 26px}
+.news-card .meta{display:flex;gap:10px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.news-card .meta em{font-style:normal;color:#7a789c;font-weight:600;letter-spacing:.04em}
+.news-card h3{font-size:22px;color:var(--ink);margin:10px 0 8px}
+.news-card p{font-size:14.5px;line-height:1.6;color:#5c5a80}
+.sub-h{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3vw,36px);color:var(--ink);margin:0 0 22px}
+.case-badge{position:absolute;left:24px;top:24px;padding:9px 14px;border-radius:999px;background:var(--gold);color:var(--navy);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}

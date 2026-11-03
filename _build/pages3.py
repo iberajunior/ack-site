@@ -49,9 +49,9 @@ body+=f'''
 {faq_section(FAQ_CU,'Dúvidas sobre <span class="it gold">os cursos</span>')}
 {final('Quer levar um curso <span class="it gold">para a sua equipe?</span>',"Qualquer curso do catálogo pode virar treinamento in company, com exemplos da sua operação.","Cursos")}
 '''
-P["cursos.html"]=("Cursos de Melhoria Contínua, Qualidade e Lean · Instituto Ackler",
- "Cursos on-line e presenciais de melhoria contínua, 5S, causa raiz, PDCA, VSM, Lean, Indústria 4.0 e normas ISO, com certificado. Instituto Ackler, Curitiba.",
- "cursos.html",body,tr,[{"@type":"ItemList","name":"Cursos do Instituto Ackler","itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@type":"Course","name":c[0],"description":c[5],"provider":{"@id":SITE+"/#org"}}} for i,c in enumerate(CURSOS)]},faq_ld(FAQ_CU)])
+P["cursos.html"]=("Cursos de Melhoria Contínua, Qualidade e Lean · ACK Institute",
+ "Cursos on-line e presenciais de melhoria contínua, 5S, causa raiz, PDCA, VSM, Lean, Indústria 4.0 e normas ISO, com certificado. ACK Institute.",
+ "cursos.html",body,tr,[{"@type":"ItemList","name":"Cursos da ACK Institute","itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@type":"Course","name":c[0],"description":c[5],"provider":{"@id":SITE+"/#org"}}} for i,c in enumerate(CURSOS)]},faq_ld(FAQ_CU)])
 
 # ============ PÁGINA DO CURSO (modelo) ============
 tr=[HOME,("Cursos","cursos.html"),("Especialista em Melhoria Contínua",CURSO_URL)]
@@ -80,7 +80,7 @@ body+=f'''
       <div class="block rv"><h2 class="h3">Para quem é</h2>{bullets(["Analistas e técnicos de qualidade, produção e processos","Supervisores e líderes que querem resultados mais consistentes","Profissionais em transição para a área industrial","Empreendedores que querem organizar a própria operação"])}</div>
       <div class="block rv mods"><h2 class="h3">Conteúdo programático</h2><p style="color:var(--muted);margin-bottom:10px">6 módulos · 40 horas</p>{mods}</div>
       <div class="block rv"><h2 class="h3" style="margin-bottom:22px">Quem ensina</h2>
-        <div class="instr"><div class="av"><img src="{img(I_D,300,300)}" alt="Josemar Thans Ackler" loading="lazy"></div><div><b>Josemar Thans Ackler</b><p>Fundador do Instituto Ackler. Passou 35 anos em grandes indústrias, no Brasil e no exterior, implantando programas de melhoria contínua e rotinas de gestão.</p></div></div></div>
+        <div class="instr"><div class="av"><img src="{wix(JOSEMAR,300,300,'t')}" alt="Josemar Ackler" loading="lazy"></div><div><b>Josemar Ackler</b><p>Fundador e CEO da ACK Institute. Passou 35 anos em grandes indústrias, no Brasil e no exterior, implantando programas de melhoria contínua e rotinas de gestão.</p></div></div></div>
       <div class="block rv"><h2 class="h3" style="margin-bottom:10px">Dúvidas sobre o curso</h2>{faq_items(FAQ_CM)}</div>
     </div>
     <aside class="buy rv d1" id="comprar">
@@ -103,7 +103,7 @@ body+=f'''
 </section>
 <div class="mbar"><b>Especialista em Melhoria Contínua</b><a class="btn btn-gold" href="{ENGAGED}">Comprar curso</a></div>
 '''
-P[CURSO_URL]=("Curso Especialista em Melhoria Contínua (on-line, 40h) · Instituto Ackler",
+P[CURSO_URL]=("Curso Especialista em Melhoria Contínua (on-line, 40h) · ACK Institute",
  "Curso on-line Especialista em Melhoria Contínua: 5S, PDCA, ferramentas da qualidade, causa raiz, VSM e indicadores. 40 horas, 6 módulos, com certificado.",
  "cursos.html",body,tr,[{"@type":"Course","name":"Especialista em Melhoria Contínua","description":"Formação prática em 5S, PDCA, causa raiz, VSM e indicadores para liderar projetos de melhoria na indústria.","provider":{"@id":SITE+"/#org"},"inLanguage":"pt-BR",
    "hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT40H","instructor":{"@type":"Person","name":"Josemar Thans Ackler"}}},faq_ld(FAQ_CM)])
@@ -111,12 +111,12 @@ P[CURSO_URL]=P[CURSO_URL]+("has-mbar",)
 
 # ============ FAQ ============
 tr=[HOME,("Perguntas frequentes","perguntas-frequentes.html")]
-GER=[("O que o Instituto Ackler faz?","O Instituto Ackler oferece consultoria empresarial em gestão e governança, treinamentos in company, cursos de melhoria contínua e serviços de RH para pequenas empresas e grandes indústrias."),
- ("Quem fundou o Instituto Ackler?","O Instituto foi fundado por Josemar Thans Ackler, que trabalhou 35 anos em grandes indústrias, no Brasil e no exterior."),
- ("O Instituto Ackler atende pequenas empresas ou só indústrias?","Atendemos os dois. Temos consultoria específica para pequenas e médias empresas e projetos para grandes indústrias. O método é o mesmo, o tamanho do projeto se ajusta à sua realidade."),
- ("Onde o Instituto Ackler fica?","Nosso escritório fica em Curitiba, no Paraná. Atendemos empresas de todo o Brasil, presencialmente ou a distância, conforme o tipo de projeto."),
+GER=[("O que a ACK Institute faz?","A ACK Institute oferece consultoria empresarial em gestão e governança, treinamentos in company, cursos de melhoria contínua e serviços de RH para pequenas empresas e grandes indústrias."),
+ ("Quem fundou a ACK Institute?","A ACK Institute foi fundada por Josemar Thans Ackler, que trabalhou 35 anos em grandes indústrias, no Brasil e no exterior."),
+ ("A ACK Institute atende pequenas empresas ou só indústrias?","Atendemos os dois. Temos consultoria específica para pequenas e médias empresas e projetos para grandes indústrias. O método é o mesmo, o tamanho do projeto se ajusta à sua realidade."),
+ ("Onde a ACK Institute fica?","Temos unidades em Curitiba (Batel) e em São Paulo (Itaim Bibi). Atendemos empresas de todo o Brasil, presencialmente ou a distância, conforme o tipo de projeto."),
  ("Como peço um orçamento?","Pelo WhatsApp (41) 99576-0079, pelo e-mail contato@institutoackler.com.br ou pelo formulário da página de contato. A primeira conversa é sem compromisso.")]
-GROUPS=[("geral","Sobre o Instituto",GER),
+GROUPS=[("geral","Sobre a ACK",GER),
  ("consultoria","Consultoria e planejamento",pages1.FAQ_C[:3]+pages1.FAQ_P[:2]),
  ("treinamentos","Treinamentos e team building",pages2.FAQ_T[:3]+pages2.FAQ_TB[:2]),
  ("cursos","Cursos e Área do aluno",FAQ_CU),
@@ -135,10 +135,10 @@ body+=f'''
     <div>{groups}</div>
   </div>
 </section>
-{final('Não encontrou <span class="it gold">a sua dúvida?</span>',"Mande sua pergunta no WhatsApp. Quem responde é a equipe do Instituto.")}
+{final('Não encontrou <span class="it gold">a sua dúvida?</span>',"Mande sua pergunta no WhatsApp. Quem responde é a equipe da ACK.")}
 '''
-P["perguntas-frequentes.html"]=("Perguntas frequentes sobre consultoria, treinamentos e cursos · Instituto Ackler",
- "Respostas sobre consultoria empresarial, planejamento estratégico em 30 dias, treinamentos in company, team building, cursos on-line e serviços de RH do Instituto Ackler.",
+P["perguntas-frequentes.html"]=("Perguntas frequentes sobre consultoria, treinamentos e cursos · ACK Institute",
+ "Respostas sobre consultoria empresarial, planejamento estratégico em 30 dias, treinamentos in company, team building, cursos on-line e serviços de RH da ACK Institute.",
  "perguntas-frequentes.html",body,tr,[faq_ld(ALLQ)])
 
 # ============ CONTEÚDOS (blog) ============
@@ -158,6 +158,9 @@ body+=f'''
 <section class="sec light" style="padding-top:90px">
   <div class="wrap">
     <!-- Lista de exemplo. No site final, os artigos são publicados pela equipe ACK no painel (WordPress). -->
+    <h2 class="sub-h rv">Movimentos ACK</h2>
+    <div class="news-grid">{"".join(f'<article class="news-card rv d{i%3}"><div class="ph"><img src="{wix(p,800,500)}" alt="" loading="lazy"></div><div class="bd"><div class="meta">{c}<em>{d}</em></div><h3>{t}</h3><p>{x}</p></div></article>' for i,(p,d,c,t,x) in enumerate(NEWS))}</div>
+    <h2 class="sub-h rv">Artigos</h2>
     <div class="filters rv" id="bfilters">{"".join(f'<button type="button" data-f="{"todos" if i==0 else c}"{" class=on" if i==0 else ""}>{c}</button>' for i,c in enumerate(cats))}</div>
     <a class="feat rv" href="{ART}" data-cat="Melhoria contínua"><div class="ph"><img src="{img(I_A,1200,800)}" alt=""></div>
       <div class="bd"><small>Melhoria contínua · Destaque</small><h3>5S: por onde começar na sua empresa</h3><p>Os primeiros passos para organizar o ambiente de trabalho e, mais difícil, manter o padrão depois da primeira semana.</p><span class="by">Josemar Thans Ackler · Leitura de 7 min</span></div></a>
@@ -169,9 +172,9 @@ body+=f'''
 </section>
 {final('Quer aplicar isso <span class="it gold">na sua empresa?</span>',"Os artigos mostram o caminho. Na consultoria, a gente percorre com você.")}
 '''
-P["conteudos.html"]=("Conteúdos sobre gestão, melhoria contínua e liderança · Instituto Ackler",
+P["conteudos.html"]=("Conteúdos sobre gestão, melhoria contínua e liderança · ACK Institute",
  "Artigos práticos sobre 5S, indicadores, causa raiz, PDCA, planejamento estratégico, team building e RH para pequenas empresas e indústrias.",
- "conteudos.html",body,tr,[{"@type":"Blog","name":"Conteúdos Instituto Ackler","publisher":{"@id":SITE+"/#org"}}])
+ "conteudos.html",body,tr,[{"@type":"Blog","name":"Conteúdos ACK Institute","publisher":{"@id":SITE+"/#org"}}])
 
 # ============ ARTIGO (modelo) ============
 tr=[HOME,("Conteúdos","conteudos.html"),("5S: por onde começar",ART)]
@@ -220,7 +223,7 @@ body+=f'''
         <a href="https://www.linkedin.com/sharing/share-offsite/?url={SITE}/{ART}" aria-label="Compartilhar no LinkedIn">{sh_in}</a>
         <a href="https://wa.me/?text={SITE}/{ART}" aria-label="Compartilhar no WhatsApp">{sh_wa}</a>
         <a href="#" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href);return false" aria-label="Copiar link">{sh_ln}</a></div>
-      <div class="author"><div class="av"><img src="{img(I_D,200,200)}" alt="Josemar Thans Ackler" loading="lazy"></div><div><b>Josemar Thans Ackler</b><p>Fundador do Instituto Ackler, com 35 anos de experiência em grandes indústrias no Brasil e no exterior.</p></div></div>
+      <div class="author"><div class="av"><img src="{wix(JOSEMAR,200,200,'t')}" alt="Josemar Ackler" loading="lazy"></div><div><b>Josemar Ackler</b><p>Fundador e CEO da ACK Institute, com 35 anos de experiência em grandes indústrias no Brasil e no exterior.</p></div></div>
     </article>
   </div>
 </section>
@@ -234,7 +237,7 @@ body+=f'''
   </div>
 </section>
 '''
-P[ART]=("5S: por onde começar na sua empresa · Instituto Ackler",
+P[ART]=("5S: por onde começar na sua empresa · ACK Institute",
  "Guia prático de 5S: o que é, como escolher a área piloto, os cinco sensos explicados um a um, como manter o padrão e os erros mais comuns na implantação.",
  "conteudos.html",body,tr,[{"@type":"Article","headline":"5S: por onde começar na sua empresa","author":{"@type":"Person","name":"Josemar Thans Ackler"},"publisher":{"@id":SITE+"/#org"},"inLanguage":"pt-BR","mainEntityOfPage":SITE+"/"+ART}])
 
@@ -255,9 +258,10 @@ body+=f'''
       <div class="clist rv d2">
         <a href="{WA}"><i>{ico("wa",1.8)}</i><div><small>WhatsApp</small><b>(41) 99576-0079</b></div></a>
         <a href="mailto:contato@institutoackler.com.br"><i>{ico("mail",1.8)}</i><div><small>E-mail</small><b>contato@institutoackler.com.br</b></div></a>
-        <div><i>{ico("pin",1.8)}</i><div><small>Escritório</small><b>Rua do Herval, 636 · Curitiba, PR</b></div></div>
+        <div><i>{ico("pin",1.8)}</i><div><small>Unidade Curitiba</small><b>Alameda Pres. Taunay, 130 · Batel, Curitiba, PR</b></div></div>
+        <div><i>{ico("pin",1.8)}</i><div><small>Unidade São Paulo · (11) 99788-1112</small><b>Av. Pres. Juscelino Kubitschek, 1327 · Itaim Bibi, São Paulo, SP</b></div></div>
       </div>
-      <div class="values rv" style="margin-top:30px"><a href="https://www.linkedin.com/company/instituto-ackler"><span>LinkedIn</span></a><a href="https://www.instagram.com/institutoackler/"><span>Instagram</span></a><a href="https://www.youtube.com/@InstitutoAckler"><span>YouTube</span></a><a href="http://facebook.com/institutoackler"><span>Facebook</span></a></div>
+      <div class="values rv" style="margin-top:30px"><a href="https://www.linkedin.com/company/ack-institute"><span>LinkedIn</span></a><a href="https://www.instagram.com/ackinstitute/"><span>Instagram</span></a><a href="https://www.youtube.com/channel/UC05vEXI78S1b1YlJLpZbnMg"><span>YouTube</span></a><a href="https://twitter.com/ackinstitute"><span>X</span></a></div>
     </div>
     <form class="form rv d1" id="cform">
       <h2>Envie sua mensagem</h2>
@@ -276,8 +280,8 @@ body+=f'''
     </form>
   </div>
 </section>
-<section class="mapfull" aria-label="Mapa"><iframe title="Mapa do escritório do Instituto Ackler" loading="lazy" src="https://www.google.com/maps?q=Rua+do+Herval,+636,+Curitiba,+PR&output=embed"></iframe></section>
+<section class="mapfull" aria-label="Mapa"><iframe title="Mapa do escritório da ACK Institute" loading="lazy" src="https://www.google.com/maps?q=Alameda+Presidente+Taunay,+130,+Batel,+Curitiba,+PR&output=embed"></iframe></section>
 '''
-P["contato.html"]=("Contato · Instituto Ackler · Curitiba, PR",
- "Fale com o Instituto Ackler pelo WhatsApp (41) 99576-0079, e-mail ou formulário. Consultoria, treinamentos, cursos e RH em Curitiba, PR.",
- "contato.html",body,tr,[{"@type":"ContactPage","name":"Contato Instituto Ackler","about":{"@id":SITE+"/#org"}}])
+P["contato.html"]=("Contato · ACK Institute · Curitiba e São Paulo",
+ "Fale com a ACK Institute pelo WhatsApp (41) 99576-0079, e-mail ou formulário. Unidades em Curitiba e São Paulo.",
+ "contato.html",body,tr,[{"@type":"ContactPage","name":"Contato ACK Institute","about":{"@id":SITE+"/#org"}}])

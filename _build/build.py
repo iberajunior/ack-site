@@ -46,6 +46,14 @@ s = s.replace('<p class="lead" style="margin-top:22px">Respostas diretas para as
               '<p class="lead" style="margin-top:22px">Respostas diretas para as dúvidas mais comuns de empresários e gestores.</p><a class="btn btn-ghost" style="margin-top:30px" href="perguntas-frequentes.html">Ver todas as perguntas</a></div>')
 s = s.replace('<p class="lead rv d1">Artigos práticos sobre melhoria contínua, indicadores e liderança, para aplicar na sua empresa ainda nesta semana.</p>',
               '<div class="rv d1"><p class="lead">Artigos práticos sobre melhoria contínua, indicadores e liderança, para aplicar na sua empresa ainda nesta semana.</p><a class="btn" style="margin-top:24px;border:1px solid #d5d3ea" href="conteudos.html">Ver todos os conteúdos</a></div>')
+# conteúdo do ackinstitute.com.br: foto do Josemar, logos de clientes e depoimentos
+import re as _re
+s = s.replace('<img src="https://static.wixstatic.com/media/b2ec3b_015b3805258849c5b860f8d6d2f0cf41~mv2.jpg/v1/fill/w_900,h_1120,al_c,q_80/sobre.jpg" alt="ACK Institute">',
+              f'<img src="{wix(JOSEMAR,900,1120,"t")}" alt="Josemar Ackler, fundador e CEO da ACK Institute">')
+s = s.replace('<div class="sig"><b>Josemar Thans Ackler</b>','<div class="sig"><b>Josemar Ackler</b>')
+s = _re.sub(r'(<div class="marquee" id="marq">\s*<div>).*?(</div>\s*</div>)', lambda m: m.group(1)+logos_imgs()+m.group(2), s, count=1, flags=_re.S)
+s = s.replace('<p>Empresas e parceiros que confiam na ACK</p>','<p>Empresas que confiam na ACK</p>')
+s = s.replace('<!-- FAQ -->', testimonials_section()+'\n\n<!-- FAQ -->', 1)
 assert 'data:image' not in s
 open(os.path.join(OUT,"index.html"),"w",encoding="utf-8").write(s)
 print("home", len(s))
