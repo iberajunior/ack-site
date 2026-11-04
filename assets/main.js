@@ -107,12 +107,13 @@ const cf=$('#cform');
 if(cf){const pre=new URLSearchParams(location.search).get('assunto');
   if(pre){const r=cf.querySelector(`input[name="assunto"][value="${pre}"]`);if(r)r.checked=true;}
   cf.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(cf);
-    const msg=`Olá! Vim pelo site do Instituto Ackler.\n\nNome: ${d.get('nome')}\nEmpresa: ${d.get('empresa')||'-'}\nE-mail: ${d.get('email')}\nTelefone: ${d.get('tel')||'-'}\nInteresse: ${d.get('assunto')||'-'}\n\n${d.get('msg')||''}`;
+    const ES=document.documentElement.lang==='es';
+    const msg=ES?`¡Hola! Llegué por el sitio de ACK Institute.\n\nNombre: ${d.get('nome')}\nEmpresa: ${d.get('empresa')||'-'}\nCorreo: ${d.get('email')}\nTeléfono: ${d.get('tel')||'-'}\nInterés: ${d.get('assunto')||'-'}\n\n${d.get('msg')||''}`:`Olá! Vim pelo site da ACK Institute.\n\nNome: ${d.get('nome')}\nEmpresa: ${d.get('empresa')||'-'}\nE-mail: ${d.get('email')}\nTelefone: ${d.get('tel')||'-'}\nInteresse: ${d.get('assunto')||'-'}\n\n${d.get('msg')||''}`;
     window.open('https://wa.me/5541995760079?text='+encodeURIComponent(msg),'_blank');
     $('.ok',cf).style.display='block';});}
 
 /* newsletter (placeholder até integrar com a ferramenta de e-mail) */
-$$('.news form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.innerHTML='<p style="color:var(--gold);font-weight:700">Pronto! Você vai receber os próximos conteúdos por e-mail.</p>'}));
+$$('.news form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.innerHTML='<p style="color:var(--gold);font-weight:700">'+(document.documentElement.lang==='es'?'¡Listo! Recibirá los próximos contenidos por correo.':'Pronto! Você vai receber os próximos conteúdos por e-mail.')+'</p>'}));
 
 
 /* voltar ao topo com anel de progresso */

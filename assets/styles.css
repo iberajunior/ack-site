@@ -757,3 +757,56 @@ header.scrolled .logo img{height:34px}
 .news-card p{font-size:14.5px;line-height:1.6;color:#5c5a80}
 .sub-h{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3vw,36px);color:var(--ink);margin:0 0 22px}
 .case-badge{position:absolute;left:24px;top:24px;padding:9px 14px;border-radius:999px;background:var(--gold);color:var(--navy);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+
+/* ===== Ajustes 04/11 ===== */
+/* logos de clientes maiores */
+.marquee div{gap:22px;padding-right:22px}
+.marquee img{height:104px;width:220px;padding:10px 14px}
+@media(max-width:620px){.marquee img{height:84px;width:170px}}
+/* unidades: um bloco por cidade */
+.units{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px;text-align:left}
+.final .units{margin-top:18px}
+.unit{position:relative;padding:24px 22px 22px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);transition:border-color .3s}
+.unit:hover{border-color:rgba(255,184,0,.5)}
+.unit i{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,184,0,.12);color:var(--gold);margin-bottom:16px}
+.unit i svg{width:20px;height:20px}
+.unit b{display:block;font-family:var(--serif);font-size:22px;font-weight:500;color:#fff}
+.unit span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:4px 0 12px}
+.unit p{font-size:14.5px;line-height:1.5;color:#d1cef0;margin:0}
+.unit p.soon{color:var(--muted);font-style:italic}
+.unit small{display:block;margin-top:8px;color:var(--sky);font-size:13.5px;font-weight:600}
+.units.u2{grid-template-columns:1fr 1fr;margin-top:14px}
+@media(max-width:1000px){.units{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.units,.units.u2{grid-template-columns:1fr}}
+/* +10 consultores associados */
+.assoc{margin-top:28px;display:flex;align-items:center;gap:28px;padding:30px 36px;border-radius:24px;background:#fff;border:1px dashed #cfcbe8}
+.assoc>b{font-family:var(--serif);font-size:clamp(40px,5vw,60px);font-weight:500;color:var(--blue);white-space:nowrap;line-height:1}
+.assoc strong{display:block;font-size:20px;color:var(--ink);margin-bottom:6px}
+.assoc small{display:block;color:#5d5a80;font-size:15px;line-height:1.55;max-width:640px}
+@media(max-width:620px){.assoc{flex-direction:column;align-items:flex-start;gap:12px;padding:26px}}
+/* assessment: curva de captura */
+.note{margin-top:22px;color:var(--muted);font-size:14px}
+.curvebox{margin:0;padding:30px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(29,103,205,.14),rgba(255,255,255,.02))}
+.curvebox figcaption b{display:block;font-family:var(--serif);font-size:34px;font-weight:500;color:var(--gold)}
+.curvebox figcaption small{color:var(--muted);font-size:13.5px}
+.curvebox>p{margin:14px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5}
+.curve{width:100%;height:auto;margin-top:18px;display:block}
+.curve .grid line{stroke:rgba(255,255,255,.08)}
+.curve text{fill:var(--muted);font-size:12px;font-family:inherit}
+.curve .b{fill:var(--gold);opacity:.9;transition:opacity .2s}
+.curve .b:hover{opacity:1;fill:#ffd257}
+.cstats{display:flex;gap:16px;margin-top:30px;flex-wrap:wrap}
+.cstats div{padding:20px 24px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);min-width:190px}
+.cstats b{display:block;font-family:var(--serif);font-size:30px;font-weight:500;color:#fff}
+.cstats small{color:var(--muted);font-size:13px}
+.contacts.c2{grid-template-columns:1fr 1fr}@media(max-width:800px){.contacts.c2{grid-template-columns:1fr}}
+.band-logo{display:block;height:64px;width:auto;margin-bottom:26px}
+/* seletor de idioma */
+.lang{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.08em}
+.lang a{padding:4px 9px;border-radius:999px;color:var(--muted);transition:color .2s,background .2s}
+.lang a:hover{color:#fff}
+.lang a.on{background:var(--gold);color:var(--ink)}
+.tb-lang{margin-left:16px}
+.dlang{margin-top:18px;align-self:flex-start}
+.nav .logo,.nav .logo img{flex-shrink:0}
+html[lang="es"] .menu>a,html[lang="es"] .dd-t{padding:12px 12px}@media(max-width:1320px){html[lang="es"] .menu>a,html[lang="es"] .dd-t{padding:12px 9px}}@media(max-width:1280px){html[lang="es"] .call,html[lang="es"] .vsep{display:none}}
