@@ -45,7 +45,7 @@ body+=f'''
   </div>
 </section>
 
-{band("Área do aluno",'Já comprou um curso? <span class="it gold">Suas aulas estão aqui.</span>',"O acesso às aulas, materiais e certificados fica na plataforma EngagEd, no computador ou no aplicativo.","Entrar na Área do aluno",AREA_ALUNO)}
+{band("Área do aluno",'Já comprou um curso? <span class="it gold">Suas aulas estão aqui.</span>',"O acesso às aulas, materiais e certificados fica na plataforma EngagEd, no computador ou no aplicativo.","Entrar na Área do aluno",AREA_ALUNO,"assets/ack-academy-branco.png")}
 {faq_section(FAQ_CU,'Dúvidas sobre <span class="it gold">os cursos</span>')}
 {final('Quer levar um curso <span class="it gold">para a sua equipe?</span>',"Qualquer curso do catálogo pode virar treinamento in company, com exemplos da sua operação.","Cursos")}
 '''
@@ -111,23 +111,22 @@ P[CURSO_URL]=P[CURSO_URL]+("has-mbar",)
 
 # ============ FAQ ============
 tr=[HOME,("Perguntas frequentes","perguntas-frequentes.html")]
-GER=[("O que a ACK Institute faz?","A ACK Institute oferece consultoria empresarial em gestão e governança, treinamentos in company, cursos de melhoria contínua e serviços de RH para pequenas empresas e grandes indústrias."),
+GER=[("O que a ACK Institute faz?","A ACK Institute oferece consultoria empresarial em gestão e governança, treinamentos in company, consultoria em excelência operacional (Lean, TPM e WCM), redução de custos industriais e cursos de melhoria contínua para pequenas empresas e grandes indústrias."),
  ("Quem fundou a ACK Institute?","A ACK Institute foi fundada por Josemar Thans Ackler, que trabalhou 35 anos em grandes indústrias, no Brasil e no exterior."),
  ("A ACK Institute atende pequenas empresas ou só indústrias?","Atendemos os dois. Temos consultoria específica para pequenas e médias empresas e projetos para grandes indústrias. O método é o mesmo, o tamanho do projeto se ajusta à sua realidade."),
- ("Onde a ACK Institute fica?","Temos unidades em Curitiba (Batel) e em São Paulo (Itaim Bibi). Atendemos empresas de todo o Brasil, presencialmente ou a distância, conforme o tipo de projeto."),
+ ("Onde a ACK Institute fica?","Temos unidades em Curitiba (Batel), São Paulo (Itaim Bibi), Porto Alegre (RS) e Asunción, no Paraguai. Atendemos empresas de todo o Brasil e da América Latina, presencialmente ou a distância, conforme o tipo de projeto."),
  ("Como peço um orçamento?","Pelo WhatsApp (41) 99576-0079, pelo e-mail contato@institutoackler.com.br ou pelo formulário da página de contato. A primeira conversa é sem compromisso.")]
 GROUPS=[("geral","Sobre a ACK",GER),
  ("consultoria","Consultoria e planejamento",pages1.FAQ_C[:3]+pages1.FAQ_P[:2]),
  ("treinamentos","Treinamentos e team building",pages2.FAQ_T[:3]+pages2.FAQ_TB[:2]),
- ("cursos","Cursos e Área do aluno",FAQ_CU),
- ("rh","Serviços de RH",pages2.FAQ_RH)]
+ ("cursos","Cursos e Área do aluno",FAQ_CU)]
 ALLQ=[q for _,_,qs in GROUPS for q in qs]
 ON=' class="on"'
 tabs="".join(f'<a href="#{k}"{ON if i==0 else ""}>{t}<em>{len(qs)}</em></a>' for i,(k,t,qs) in enumerate(GROUPS))
 groups="".join(f'<div class="fgroup" id="{k}"><h2 class="rv">{t}</h2><div class="rv">{faq_items(qs, i==0)}</div></div>' for i,(k,t,qs) in enumerate(GROUPS))
 body=phero(tr,"Perguntas frequentes",'Respostas diretas <span class="it gold">antes da conversa</span>',
- "As dúvidas mais comuns de empresários, gestores e alunos sobre consultoria, treinamentos, cursos e RH, respondidas em poucas linhas.",I_E,"",
- f'<span><b>{len(ALLQ)}</b> perguntas</span><span>5 temas</span>',"short")
+ "As dúvidas mais comuns de empresários, gestores e alunos sobre consultoria, treinamentos e cursos, respondidas em poucas linhas.",I_E,"",
+ f'<span><b>{len(ALLQ)}</b> perguntas</span><span>4 temas</span>',"short")
 body+=f'''
 <section class="sec" style="padding-top:80px">
   <div class="wrap faq faqp">
@@ -138,7 +137,7 @@ body+=f'''
 {final('Não encontrou <span class="it gold">a sua dúvida?</span>',"Mande sua pergunta no WhatsApp. Quem responde é a equipe da ACK.")}
 '''
 P["perguntas-frequentes.html"]=("Perguntas frequentes sobre consultoria, treinamentos e cursos · ACK Institute",
- "Respostas sobre consultoria empresarial, planejamento estratégico em 30 dias, treinamentos in company, team building, cursos on-line e serviços de RH da ACK Institute.",
+ "Respostas sobre consultoria empresarial, planejamento estratégico em 30 dias, treinamentos in company, team building, excelência operacional e cursos on-line da ACK Institute.",
  "perguntas-frequentes.html",body,tr,[faq_ld(ALLQ)])
 
 # ============ CONTEÚDOS (blog) ============
@@ -148,12 +147,12 @@ POSTS=[("Indicadores","Quais indicadores uma PME deve acompanhar",I_B,"Poucos n�
  ("Gestão","PDCA no dia a dia: um exemplo real",I_C,"O ciclo de melhoria aplicado a um problema comum de produção.","5 min"),
  ("Planejamento","Planejamento estratégico para pequena empresa",I_D,"Um roteiro enxuto para quem nunca fez um plano formal.","8 min"),
  ("Pessoas","Team building funciona mesmo?",I_G,"O que diferencia uma vivência útil de um dia de recreação.","5 min"),
- ("RH","Por que tantas contratações não passam da experiência",I_F,"Três ajustes simples no processo seletivo que reduzem a rotatividade.","6 min")]
+ ("Excelência operacional","OEE: o indicador que mostra quanto a fábrica perde",I_F,"Disponibilidade, performance e qualidade em uma conta simples.","6 min")]
 tr=[HOME,("Conteúdos","conteudos.html")]
-cats=["Todos","Melhoria contínua","Indicadores","Qualidade","Gestão","Planejamento","Pessoas","RH"]
+cats=["Todos","Melhoria contínua","Indicadores","Qualidade","Gestão","Planejamento","Pessoas","Excelência operacional"]
 posts="".join(f'<a class="post rv d{i%3}" href="{ART}" data-cat="{c}"><div class="ph"><img src="{img(im,800,500)}" alt="" loading="lazy"></div><div class="bd"><small>{c}</small><h3>{t}</h3><p>{p}</p><span class="by">Leitura de {m}</span></div></a>' for i,(c,t,im,p,m) in enumerate(POSTS))
 body=phero(tr,"Conteúdos",'Gestão explicada <span class="it gold">sem complicação</span>',
- "Artigos práticos sobre melhoria contínua, indicadores, liderança e RH, para aplicar na sua empresa ainda nesta semana.",I_C,"","","short")
+ "Artigos práticos sobre melhoria contínua, indicadores, liderança e excelência operacional, para aplicar na sua empresa ainda nesta semana.",I_C,"","","short")
 body+=f'''
 <section class="sec light" style="padding-top:90px">
   <div class="wrap">
@@ -173,7 +172,7 @@ body+=f'''
 {final('Quer aplicar isso <span class="it gold">na sua empresa?</span>',"Os artigos mostram o caminho. Na consultoria, a gente percorre com você.")}
 '''
 P["conteudos.html"]=("Conteúdos sobre gestão, melhoria contínua e liderança · ACK Institute",
- "Artigos práticos sobre 5S, indicadores, causa raiz, PDCA, planejamento estratégico, team building e RH para pequenas empresas e indústrias.",
+ "Artigos práticos sobre 5S, indicadores, causa raiz, PDCA, planejamento estratégico, team building e excelência operacional para pequenas empresas e indústrias.",
  "conteudos.html",body,tr,[{"@type":"Blog","name":"Conteúdos ACK Institute","publisher":{"@id":SITE+"/#org"}}])
 
 # ============ ARTIGO (modelo) ============
@@ -243,7 +242,7 @@ P[ART]=("5S: por onde começar na sua empresa · ACK Institute",
 
 # ============ CONTATO ============
 tr=[HOME,("Contato","contato.html")]
-ASS=["Consultoria","Planejamento","Treinamentos","Team Building","Cursos","RH","Outro"]
+ASS=["Consultoria","Planejamento","Treinamentos","Team Building","Cursos","Assessment Industrial","Consultoria LEAN/TPM WCM","Consultoria Gestão Operacional","Outro"]
 ASSL={"Planejamento":"Planejamento 30 dias"}
 pills="".join(f'<label><input type="radio" name="assunto" value="{a}"{" checked" if i==0 else ""}><span>{ASSL.get(a,a)}</span></label>' for i,a in enumerate(ASS))
 body=phero(tr,"Contato",'Conte o desafio da sua empresa. <span class="it gold">A gente responde.</span>',
@@ -258,9 +257,8 @@ body+=f'''
       <div class="clist rv d2">
         <a href="{WA}"><i>{ico("wa",1.8)}</i><div><small>WhatsApp</small><b>(41) 99576-0079</b></div></a>
         <a href="mailto:contato@institutoackler.com.br"><i>{ico("mail",1.8)}</i><div><small>E-mail</small><b>contato@institutoackler.com.br</b></div></a>
-        <div><i>{ico("pin",1.8)}</i><div><small>Unidade Curitiba</small><b>Alameda Pres. Taunay, 130 · Batel, Curitiba, PR</b></div></div>
-        <div><i>{ico("pin",1.8)}</i><div><small>Unidade São Paulo · (11) 99788-1112</small><b>Av. Pres. Juscelino Kubitschek, 1327 · Itaim Bibi, São Paulo, SP</b></div></div>
       </div>
+      {units_html("units u2")}
       <div class="values rv" style="margin-top:30px"><a href="https://www.linkedin.com/company/ack-institute"><span>LinkedIn</span></a><a href="https://www.instagram.com/ackinstitute/"><span>Instagram</span></a><a href="https://www.youtube.com/channel/UC05vEXI78S1b1YlJLpZbnMg"><span>YouTube</span></a><a href="https://twitter.com/ackinstitute"><span>X</span></a></div>
     </div>
     <form class="form rv d1" id="cform">
@@ -282,6 +280,6 @@ body+=f'''
 </section>
 <section class="mapfull" aria-label="Mapa"><iframe title="Mapa do escritório da ACK Institute" loading="lazy" src="https://www.google.com/maps?q=Alameda+Presidente+Taunay,+130,+Batel,+Curitiba,+PR&output=embed"></iframe></section>
 '''
-P["contato.html"]=("Contato · ACK Institute · Curitiba e São Paulo",
- "Fale com a ACK Institute pelo WhatsApp (41) 99576-0079, e-mail ou formulário. Unidades em Curitiba e São Paulo.",
+P["contato.html"]=("Contato · ACK Institute · Curitiba, São Paulo, Porto Alegre e Asunción",
+ "Fale com a ACK Institute pelo WhatsApp (41) 99576-0079, e-mail ou formulário. Unidades em Curitiba, São Paulo, Porto Alegre e Asunción.",
  "contato.html",body,tr,[{"@type":"ContactPage","name":"Contato ACK Institute","about":{"@id":SITE+"/#org"}}])

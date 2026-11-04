@@ -36,7 +36,7 @@ body+=f'''
   <div><b><span data-count="35">0</span></b><small>anos de experiência em grandes indústrias</small></div>
   <div><b>+<span data-count="20">0</span></b><small>cursos no portfólio</small></div>
   <div><b data-count="7">0</b><small>profissionais no time fixo</small></div>
-  <div><b>4</b><small>frentes: consultoria, treinamentos, cursos e RH</small></div>
+  <div><b>4</b><small>unidades: Curitiba, São Paulo, Porto Alegre e Asunción</small></div>
 </div></div>
 
 <section class="sec">
@@ -52,6 +52,7 @@ body+=f'''
   <div class="wrap">
     {sec_head("Time de gestão e conselho",'Quem conduz <span class="it" style="color:var(--blue)">os projetos</span>',"Experiência em indústrias globais somada à vivência no atendimento a pequenas e médias empresas.")}
     {team_html()}
+    <div class="assoc rv"><b>+ de <span data-count="10">0</span></b><div><strong>Consultores associados</strong><small>Especialistas em Lean, TPM, WCM, qualidade e gestão que se somam ao time conforme o desafio de cada projeto.</small></div></div>
   </div>
 </section>
 
@@ -73,16 +74,16 @@ body+=f'''
 {final('Conte o desafio da sua empresa. <span class="it gold">A gente mostra o caminho.</span>',"Uma conversa inicial, sem compromisso, para entender o momento da empresa e indicar a melhor frente de trabalho.")}
 '''
 P["sobre.html"]=("Sobre a ACK Institute · 35 anos de experiência industrial em gestão",
- "Conheça a ACK Institute, fundada por Josemar Thans Ackler após 35 anos em grandes indústrias. Consultoria, treinamentos, cursos e RH. Curitiba e São Paulo.",
+ "Conheça a ACK Institute, fundada por Josemar Thans Ackler após 35 anos em grandes indústrias. Consultoria, excelência operacional, treinamentos e cursos. Curitiba, São Paulo, Porto Alegre e Asunción.",
  "sobre.html",body,tr,[{"@type":"AboutPage","name":"Sobre a ACK Institute","about":{"@id":SITE+"/#org"}},{"@type":"Person","name":"Josemar Thans Ackler","jobTitle":"Fundador","worksFor":{"@id":SITE+"/#org"}}])
 
 # ============ CONSULTORIA ============
-tr=[HOME,("Consultoria Empresarial","consultoria-empresarial.html")]
+tr=[HOME,("Gestão Operacional","consultoria-empresarial.html")]
 FAQ_C=[("A consultoria atende pequenas empresas?","Sim. Temos um formato pensado para pequenas e médias empresas, com escopo e duração menores. O método é o mesmo usado na indústria, ajustado à sua realidade."),
  ("Quanto tempo dura um projeto de consultoria?","Depende do escopo. Um planejamento estratégico pode ser feito em 30 dias. Projetos de implantação de rotina de gestão e melhoria de processos costumam ser acompanhados por alguns meses. Na conversa inicial a gente define o prazo junto com você."),
  ("A consultoria é presencial?","Pode ser presencial, a distância ou mista. Etapas como diagnóstico e implantação no chão de fábrica funcionam melhor presencialmente; o acompanhamento pode ser on-line."),
  ("Qual a diferença entre consultoria e treinamento?","Na consultoria, trabalhamos junto com a liderança para diagnosticar, planejar e implantar melhorias. No treinamento, capacitamos a equipe em um tema específico. Muitos projetos combinam os dois.")]
-body=phero(tr,"Consultoria Empresarial",'Gestão organizada, <span class="it gold">resultado medido</span>',
+body=phero(tr,"Consultoria em Gestão Operacional",'Gestão organizada, <span class="it gold">resultado medido</span>',
  "Consultoria em gestão e governança para pequenas empresas e grandes indústrias. A gente diagnostica, monta o plano junto com a liderança e acompanha a implantação.",I_B,
  btn("Quero um diagnóstico da minha empresa","contato.html?assunto=Consultoria")+btn("Como funciona","#metodo",False),
  '<span><b>PME</b> e indústria</span><span>Presencial ou on-line</span><span>Com indicadores de acompanhamento</span>')
@@ -104,7 +105,7 @@ body+=f'''
 <section class="sec light">
   <div class="wrap">
     {sec_head("Nossas soluções",'Serviços para cada etapa da <span class="it" style="color:var(--blue)">maturidade operacional</span>',"Desenhados sob medida para gerar resultados práticos e mensuráveis, com base em TPM, WCM e Lean.")}
-    {cards([("loop","Excelência Operacional","Diagnóstico e melhoria de processos para cortar desperdícios, eliminar gargalos e aumentar a produtividade real da operação.",[],"",None),
+    {cards([("loop","Excelência Operacional","Diagnóstico e melhoria de processos para cortar desperdícios, eliminar gargalos e aumentar a produtividade real da operação.",[],"LEAN, TPM e WCM","consultoria-excelencia-operacional.html"),
             ("chart","Indicadores e Performance","KPIs estratégicos para transformar metas em resultados, com foco em análise e tomada de decisão.",[],"",None),
             ("shield","Governança e Organização","Estruturas de gestão, rotinas e rituais que garantem foco, alinhamento e autonomia em todas as áreas.",[],"",None),
             ("people","Desenvolvimento de Lideranças","Treinamentos e mentorias práticas para formar líderes mais estratégicos, capazes de engajar e entregar.",[],"Ver treinamentos","treinamentos.html"),
@@ -143,9 +144,9 @@ body+=f'''
 {faq_section(FAQ_C)}
 {final('Conte o desafio da sua empresa. <span class="it gold">A gente mostra o caminho.</span>',"Uma conversa inicial, sem compromisso, para entender o momento da empresa e indicar o formato de consultoria mais adequado.","Consultoria")}
 '''
-P["consultoria-empresarial.html"]=("Consultoria Empresarial em Gestão e Governança · ACK Institute",
+P["consultoria-empresarial.html"]=("Consultoria em Gestão Operacional e Governança · ACK Institute",
  "Consultoria em gestão, governança, indicadores e processos para pequenas empresas e grandes indústrias. Diagnóstico, plano e acompanhamento. Curitiba e São Paulo.",
- "consultoria-empresarial.html",body,tr,[{"@type":"Service","name":"Consultoria Empresarial","serviceType":"Consultoria em gestão e governança","provider":{"@id":SITE+"/#org"},"areaServed":"BR","audience":{"@type":"BusinessAudience","name":"Pequenas e médias empresas e indústrias"}},faq_ld(FAQ_C)])
+ "consultoria-empresarial.html",body,tr,[{"@type":"Service","name":"Consultoria em Gestão Operacional","serviceType":"Consultoria em gestão operacional e governança","provider":{"@id":SITE+"/#org"},"areaServed":"BR","audience":{"@type":"BusinessAudience","name":"Pequenas e médias empresas e indústrias"}},faq_ld(FAQ_C)])
 
 # ============ PLANEJAMENTO 30 DIAS ============
 tr=[HOME,("Consultoria","consultoria-empresarial.html"),("Planejamento Estratégico","planejamento-estrategico.html")]

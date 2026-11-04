@@ -152,6 +152,4 @@ body+=f'''
 {faq_section(FAQ_RH,'Dúvidas sobre <span class="it gold">serviços de RH</span>')}
 {final('Pessoas certas, <span class="it gold">no lugar certo.</span>',"Conte o que está pesando no RH da sua empresa e a gente indica por onde começar.","RH")}
 '''
-P["servicos-de-rh.html"]=("Serviços de RH: Recrutamento, BPO e Perfil Comportamental · ACK Institute",
- "Recrutamento e seleção, BPO em RH, análise de perfis comportamentais e consultoria para estruturar o departamento de pessoas. Curitiba e São Paulo.",
- "consultoria-empresarial.html",body,tr,[{"@type":"Service","name":"Serviços de RH","serviceType":"Recrutamento e seleção, BPO em RH, perfis comportamentais","provider":{"@id":SITE+"/#org"},"areaServed":"BR"},faq_ld(FAQ_RH)])
+# Página de RH removida em 04/11 (a ACK não oferece mais o serviço)

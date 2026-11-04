@@ -2,7 +2,7 @@ import json, html as H
 
 SITE = "https://www.ackinstitute.com.br"
 WA = "https://wa.me/5541995760079"
-AREA_ALUNO = "#area-do-aluno"  # PENDENTE: URL da área do aluno na EngagEd
+AREA_ALUNO = "https://ackinstitute.online.engaged.com.br"
 
 def img(id_, w=1200, h=800):
     return f"https://static.wixstatic.com/media/{id_}/v1/fill/w_{w},h_{h},al_c,q_80/img.jpg"
@@ -95,7 +95,7 @@ FOOTER = f'''<footer>
   <div class="wrap">
     <div class="foot">
       <div><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"><p style="max-width:300px;line-height:1.6">Consultoria em gestão operacional, treinamentos e cursos em melhoria contínua. Curitiba e São Paulo.</p></div>
-      <div><h4>Soluções</h4><a href="consultoria-empresarial.html">Consultoria Empresarial</a><a href="planejamento-estrategico.html">Planejamento Estratégico</a><a href="treinamentos.html">Treinamentos</a><a href="team-building.html">Team Building</a><a href="servicos-de-rh.html">Serviços de RH</a></div>
+      <div><h4>Soluções</h4><a href="consultoria-excelencia-operacional.html">Excelência Operacional</a><a href="consultoria-empresarial.html">Gestão Operacional</a><a href="assessment-industrial.html">Redução de Custos</a><a href="planejamento-estrategico.html">Planejamento Estratégico</a><a href="treinamentos.html">Treinamentos</a><a href="team-building.html">Team Building</a></div>
       <div><h4>A ACK</h4><a href="sobre.html">Sobre</a><a href="cursos.html">Cursos</a><a href="conteudos.html">Conteúdos</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="contato.html">Contato</a></div>
       <div><h4>Redes</h4><a href="https://www.linkedin.com/company/ack-institute">LinkedIn</a><a href="https://www.instagram.com/ackinstitute/">Instagram</a><a href="https://www.youtube.com/channel/UC05vEXI78S1b1YlJLpZbnMg">YouTube</a><a href="https://twitter.com/ackinstitute">X</a></div>
     </div>
@@ -105,7 +105,7 @@ FOOTER = f'''<footer>
 <a class="wa" href="{WA}" aria-label="Conversar no WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg></a>'''
 
 ORG = {"@type":"ProfessionalService","@id":SITE+"/#org","name":"ACK Institute","alternateName":"Instituto Ackler","url":SITE,"telephone":"+55 41 99576-0079","email":"contato@institutoackler.com.br",
-       "address":[{"@type":"PostalAddress","streetAddress":"Alameda Presidente Taunay, 130 - Batel","addressLocality":"Curitiba","addressRegion":"PR","postalCode":"80420-180","addressCountry":"BR"},{"@type":"PostalAddress","streetAddress":"Av. Presidente Juscelino Kubitschek, 1327 - Itaim Bibi","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"}]}
+       "address":[{"@type":"PostalAddress","streetAddress":"Alameda Presidente Taunay, 130 - Batel","addressLocality":"Curitiba","addressRegion":"PR","postalCode":"80420-180","addressCountry":"BR"},{"@type":"PostalAddress","streetAddress":"Av. Presidente Juscelino Kubitschek, 1327 - Itaim Bibi","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},{"@type":"PostalAddress","addressLocality":"Porto Alegre","addressRegion":"RS","addressCountry":"BR"},{"@type":"PostalAddress","addressLocality":"Asunción","addressCountry":"PY"}]}
 
 def crumbs_ld(trail):
     return {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":SITE+"/"+h} for i,(n,h) in enumerate(trail)]}
@@ -122,7 +122,9 @@ def page(slug, title, desc, active, body, trail, extra_ld=(), body_class=""):
 <meta name="description" content="{H.escape(desc)}">
 <link rel="canonical" href="{SITE}/{slug}">
 <meta property="og:type" content="website"><meta property="og:title" content="{H.escape(title)}"><meta property="og:description" content="{H.escape(desc)}"><meta property="og:url" content="{SITE}/{slug}"><meta property="og:locale" content="pt_BR">
-<link rel="icon" href="assets/logo.png">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0A0840">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -164,7 +166,8 @@ def phero(trail, eyebrow, h1, lead, image, ctas="", chips="", cls=""):
 def btn(text, href, gold=True, magnetic=True):
     cls = "btn btn-gold" + (" magnetic" if magnetic else "") if gold else "btn btn-ghost"
     arrow = ARROW if gold else ""
-    return f'<a class="{cls}" href="{href}">{text} {arrow}</a>'
+    ext = ' target="_blank" rel="noopener"' if href.startswith("http") and "wa.me" not in href else ''
+    return f'<a class="{cls}" href="{href}"{ext}>{text} {arrow}</a>'
 
 def sec_head(eyebrow, h2, lead=""):
     l = f'<p class="lead rv d1">{lead}</p>' if lead else '<div></div>'
@@ -217,9 +220,10 @@ def final(h2, lead, assunto=None):
   </div>
 </section>'''
 
-def band(tag, h2, p, btn_text, href):
+def band(tag, h2, p, btn_text, href, logo=""):
+    lg = f'<img class="band-logo" src="{logo}" alt="ACK Academy" loading="lazy">' if logo else ''
     return f'''<section style="padding:40px 0 120px"><div class="band rv">
-  <div><span class="tag" style="display:inline-block;padding:8px 14px;border-radius:999px;background:rgba(255,184,0,.14);color:var(--gold);font-size:13px;font-weight:700;margin-bottom:22px">{tag}</span><h2>{h2}</h2></div>
+  <div>{lg}<span class="tag" style="display:inline-block;padding:8px 14px;border-radius:999px;background:rgba(255,184,0,.14);color:var(--gold);font-size:13px;font-weight:700;margin-bottom:22px">{tag}</span><h2>{h2}</h2></div>
   <div class="side"><p>{p}</p>{btn(btn_text, href)}</div>
 </div></section>'''
 
@@ -248,14 +252,14 @@ def svg(k, w=1.8):
     return f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="{w}">{ICO[k]}</svg>'
 
 MEGA = [
- ("Consultoria", [("consultoria-empresarial.html","chart","Consultoria Empresarial","Gestão e governança, da PME à indústria"),
-                  ("planejamento-estrategico.html","target","Planejamento Estratégico","Seu plano pronto em 30 dias"),
-                  ("servicos-de-rh.html","id","Serviços de RH","Recrutamento, BPO e perfis comportamentais")]),
+ ("Consultoria", [("consultoria-excelencia-operacional.html","loop","Excelência Operacional","LEAN, TPM e WCM"),
+                  ("consultoria-empresarial.html","chart","Gestão Operacional","Gestão e governança, da PME à indústria"),
+                  ("assessment-industrial.html","search","Redução de Custos","Assessment industrial de custos e perdas")]),
  ("Capacitação", [("treinamentos.html","people","Treinamentos In Company","Temas aplicados à rotina da equipe"),
                   ("team-building.html","heart","Team Building","Vivências in company e offsite"),
                   ("cursos.html","cap","Cursos","On-line e presenciais, com certificado")]),
 ]
-SOL = [h for _,its in MEGA for h,*_ in its if h!="cursos.html"]
+SOL = [h for _,its in MEGA for h,*_ in its if h!="cursos.html"]+["planejamento-estrategico.html"]
 MAIN = [("Cursos","cursos.html"),("Sobre","sobre.html"),("Conteúdos","conteudos.html"),("FAQ","perguntas-frequentes.html"),("Contato","contato.html")]
 ON = ' class="on"'
 
@@ -270,13 +274,14 @@ def header(active):
     return f'''<header id="hd">
   <div class="topbar"><div class="wrap tb">
     {socials("soc tb-soc")}
-    <span class="tb-loc">{svg("pin")}Curitiba · São Paulo<span class="tb-more"> · Atendimento em todo o Brasil</span></span>
+    <span class="tb-loc">{svg("pin")}Curitiba · São Paulo · Porto Alegre · Asunción<span class="tb-more"> · Atendimento no Brasil e na América Latina</span></span>
+    <span class="lang tb-lang" aria-label="Idioma"><a class="lg-pt on" href="@@PT@@" hreflang="pt-BR" lang="pt-BR">PT</a><a class="lg-es" href="@@ES@@" hreflang="es" lang="es">ES</a></span>
   </div></div>
   <div class="bar"><div class="wrap nav">
     <a class="logo" href="index.html" aria-label="ACK Institute, página inicial"><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"></a>
     <nav class="menu">{"".join(items)}</nav>
     <div class="nav-cta">
-      <a class="nav-aluno" href="{AREA_ALUNO}">{svg("cap")}Área do aluno</a>
+      <a class="nav-aluno" href="{AREA_ALUNO}" target="_blank" rel="noopener">{svg("cap")}Área do aluno</a>
       <span class="vsep" aria-hidden="true"></span>
       <a class="call" href="{WA}"><i>{svg("wa")}</i><span><small>Fale com um consultor</small><b>(41) 99576-0079</b></span></a>
     </div>
@@ -285,9 +290,10 @@ def header(active):
 </header>
 <div class="drawer" id="drawer" role="dialog" aria-label="Menu">
   <div class="top"><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"><button class="x" aria-label="Fechar menu">×</button></div>
-  <nav>{"".join(dl)}<a href="{AREA_ALUNO}" style="color:var(--gold)">Área do aluno</a></nav>
+  <nav>{"".join(dl)}<a href="{AREA_ALUNO}" target="_blank" rel="noopener" style="color:var(--gold)">Área do aluno</a></nav>
   <a class="btn btn-gold" href="contato.html">Agendar conversa {ARROW}</a>
   {socials("soc dsoc")}
+  <span class="lang dlang" aria-label="Idioma"><a class="lg-pt on" href="@@PT@@" hreflang="pt-BR" lang="pt-BR">PT</a><a class="lg-es" href="@@ES@@" hreflang="es" lang="es">ES</a></span>
 </div>'''
 
 HEART = '<svg class="hrt" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="amor"><path d="M12 21s-7.5-4.6-9.6-9.4C.9 8 3 4 6.8 4c2.1 0 3.7 1.1 5.2 3 1.5-1.9 3.1-3 5.2-3C21 4 23.1 8 21.6 11.6 19.5 16.4 12 21 12 21z"/></svg>'
@@ -296,10 +302,10 @@ WA_SVG = '<svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6
 FOOTER = f'''<footer>
   <div class="wrap">
     <div class="foot">
-      <div><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"><p style="max-width:300px;line-height:1.6">Consultoria em gestão operacional, treinamentos e cursos em melhoria contínua. Curitiba e São Paulo.</p>{socials("soc fsoc")}</div>
-      <div><h4>Soluções</h4><a href="consultoria-empresarial.html">Consultoria Empresarial</a><a href="planejamento-estrategico.html">Planejamento Estratégico</a><a href="treinamentos.html">Treinamentos</a><a href="team-building.html">Team Building</a><a href="servicos-de-rh.html">Serviços de RH</a></div>
-      <div><h4>A ACK</h4><a href="sobre.html">Sobre</a><a href="cursos.html">Cursos</a><a href="conteudos.html">Conteúdos</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="{AREA_ALUNO}">Área do aluno</a></div>
-      <div><h4>Contato</h4><a href="{WA}">(41) 99576-0079</a><a href="mailto:contato@institutoackler.com.br">contato@institutoackler.com.br</a><a href="contato.html">Curitiba · Alameda Pres. Taunay, 130</a><a href="contato.html">São Paulo · Av. Pres. Juscelino Kubitschek, 1327</a></div>
+      <div><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"><p style="max-width:300px;line-height:1.6">Consultoria em gestão, governança e excelência operacional, treinamentos e cursos em melhoria contínua.</p>{socials("soc fsoc")}</div>
+      <div><h4>Soluções</h4><a href="consultoria-excelencia-operacional.html">Excelência Operacional</a><a href="consultoria-empresarial.html">Gestão Operacional</a><a href="assessment-industrial.html">Redução de Custos</a><a href="planejamento-estrategico.html">Planejamento Estratégico</a><a href="treinamentos.html">Treinamentos</a><a href="team-building.html">Team Building</a></div>
+      <div><h4>A ACK</h4><a href="sobre.html">Sobre</a><a href="cursos.html">Cursos</a><a href="conteudos.html">Conteúdos</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="{AREA_ALUNO}" target="_blank" rel="noopener">Área do aluno</a></div>
+      <div><h4>Contato</h4><a href="{WA}">(41) 99576-0079</a><a href="mailto:contato@institutoackler.com.br">contato@institutoackler.com.br</a><a href="contato.html#unidades">Curitiba · São Paulo</a><a href="contato.html#unidades">Porto Alegre · Asunción (PY)</a></div>
     </div>
     <div class="copy"><span>© <span data-year>2026</span> ACK Institute · Consultores Associados</span><span class="made">Feito com {HEART} por <a href="https://agenciakroma.com.br" target="_blank" rel="noopener">Agência KROMA</a></span></div>
   </div>
@@ -309,7 +315,8 @@ FOOTER = f'''<footer>
 
 HERO_PHOTO = {"sobre.html":"sobre","consultoria-empresarial.html":"consultoria","planejamento-estrategico.html":"planejamento",
  "treinamentos.html":"treinamentos","team-building.html":"team-building","cursos.html":"cursos","curso-especialista-melhoria-continua.html":"curso",
- "servicos-de-rh.html":"rh","conteudos.html":"conteudos","contato.html":"contato"}
+ "conteudos.html":"conteudos","contato.html":"contato",
+ "consultoria-excelencia-operacional.html":"curso","assessment-industrial.html":"rh"}
 
 def phero(trail, eyebrow, h1, lead, image, ctas="", chips="", cls=""):
     c = f'<div class="hero-ctas rv d3">{ctas}</div>' if ctas else ''
@@ -366,9 +373,10 @@ def testimonials_section(cls=""):
   </div>
 </section>'''
 
-LOGOS = [("b2ec3b_bd3b6d50a4a9414aa1fcbeff8c4dae95~mv2.png","Band"),("b2ec3b_492630f1242a4963bfcd7d8aab898618~mv2.png","Grupo Risotolândia"),("b2ec3b_e27dbb60a5f746df90a4dff1ebb42538~mv2.png","Brado Logística"),("b2ec3b_ffbf732b431942b0a13bce409ec99a67~mv2.png","Gerar"),("b2ec3b_5267c0ccd0074df5a8b8d78c9777522a~mv2.png","Plastilit"),("b2ec3b_323d3f9eca724ab297552e5d0077e31a~mv2.png","Castrolanda"),("b2ec3b_eb24fd5a8b4e451cbf649541eb9b12e8~mv2.png","Fundação Copel"),("b2ec3b_a5b57f09c66a4997837848a502abf114~mv2.png","Grupo Boticário"),("b2ec3b_61f4cef028444930877e428802601edb~mv2.png","CNA"),("b2ec3b_41f7d3c23b3749c4a66e551cb622f6e1~mv2.jpeg","Outdoormidia"),("b2ec3b_4486e6c75cb349e18c1490d40080f217~mv2.png","C12 Brasil"),("b2ec3b_a4e451e87dfb47aaae48b37c3a69a2df~mv2.png","Abigraf")]
+LOGOS = [("b2ec3b_bd3b6d50a4a9414aa1fcbeff8c4dae95~mv2.png","Band"),("b2ec3b_492630f1242a4963bfcd7d8aab898618~mv2.png","Grupo Risotolândia"),("b2ec3b_e27dbb60a5f746df90a4dff1ebb42538~mv2.png","Brado Logística"),("b2ec3b_ffbf732b431942b0a13bce409ec99a67~mv2.png","Gerar"),("b2ec3b_5267c0ccd0074df5a8b8d78c9777522a~mv2.png","Plastilit"),("b2ec3b_323d3f9eca724ab297552e5d0077e31a~mv2.png","Castrolanda"),("b2ec3b_eb24fd5a8b4e451cbf649541eb9b12e8~mv2.png","Fundação Copel"),("b2ec3b_a5b57f09c66a4997837848a502abf114~mv2.png","Grupo Boticário"),("b2ec3b_61f4cef028444930877e428802601edb~mv2.png","CNA"),("b2ec3b_41f7d3c23b3749c4a66e551cb622f6e1~mv2.jpeg","Outdoormidia"),("b2ec3b_a4e451e87dfb47aaae48b37c3a69a2df~mv2.png","Abigraf")]
+LOCAL_LOGOS = [("mars.webp","Mars"),("corbion.webp","Corbion"),("chs.webp","CHS"),("vandali.webp","Vandali S/A"),("maxi-grafica.webp","Maxi Gráfica")]  # (arquivo em assets/clientes, nome)
 def logos_imgs():
-    return "".join(f'<img src="https://static.wixstatic.com/media/{i}/v1/fit/w_320,h_160,q_90/logo.png" alt="{a}" loading="lazy">' for i,a in LOGOS)
+    return "".join(f'<img src="https://static.wixstatic.com/media/{i}/v1/fit/w_480,h_240,q_90/logo.png" alt="{a}" loading="lazy">' for i,a in LOGOS)+"".join(f'<img src="assets/clientes/{f}" alt="{a}" loading="lazy">' for f,a in LOCAL_LOGOS)
 def logos(label="Empresas que confiam na ACK"):
     return f'<div class="logos"><p>{label}</p><div class="marquee" id="marq"><div>{logos_imgs()}</div></div></div>'
 
@@ -380,3 +388,18 @@ NEWS = [
 SECTORS = [("brief","Escritórios e serviços corporativos"),("chart","Indústria e manufatura"),("screen","Tecnologia e inovação"),("flow","Construção civil e engenharia"),("link","Distribuidoras, varejo e e-commerce"),("heart","Saúde, bem-estar e educação"),("shield","Poder público")]
 def sectors_html():
     return '<div class="sectors">'+"".join(f'<div class="sector rv d{i%3}"><i>{ico(k)}</i><span>{t}</span></div>' for i,(k,t) in enumerate(SECTORS))+'</div>'
+
+# ===== Unidades (04/11) =====
+UNITS = [
+ ("Curitiba","PR · Brasil","Alameda Pres. Taunay, 130 · Batel","(41) 99576-0079"),
+ ("São Paulo","SP · Brasil","Av. Pres. Juscelino Kubitschek, 1327 · Itaim Bibi","(11) 99788-1112"),
+ ("Porto Alegre","RS · Brasil","",""),
+ ("Asunción","Paraguai","",""),
+]
+def units_html(cls="units"):
+    out=[]
+    for c,r,a,t in UNITS:
+        ad = f'<p>{a}</p>' if a else '<p class="soon">Endereço em breve</p>'
+        tl = f'<small>{t}</small>' if t else ''
+        out.append(f'<div class="unit rv"><i>{svg("pin")}</i><b>{c}</b><span>{r}</span>{ad}{tl}</div>')
+    return f'<div class="{cls}" id="unidades">'+"".join(out)+'</div>'
