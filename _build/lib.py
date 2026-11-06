@@ -375,8 +375,15 @@ def testimonials_section(cls=""):
 
 LOGOS = [("b2ec3b_bd3b6d50a4a9414aa1fcbeff8c4dae95~mv2.png","Band"),("b2ec3b_492630f1242a4963bfcd7d8aab898618~mv2.png","Grupo Risotolândia"),("b2ec3b_e27dbb60a5f746df90a4dff1ebb42538~mv2.png","Brado Logística"),("b2ec3b_ffbf732b431942b0a13bce409ec99a67~mv2.png","Gerar"),("b2ec3b_5267c0ccd0074df5a8b8d78c9777522a~mv2.png","Plastilit"),("b2ec3b_323d3f9eca724ab297552e5d0077e31a~mv2.png","Castrolanda"),("b2ec3b_eb24fd5a8b4e451cbf649541eb9b12e8~mv2.png","Fundação Copel"),("b2ec3b_a5b57f09c66a4997837848a502abf114~mv2.png","Grupo Boticário"),("b2ec3b_61f4cef028444930877e428802601edb~mv2.png","CNA"),("b2ec3b_41f7d3c23b3749c4a66e551cb622f6e1~mv2.jpeg","Outdoormidia"),("b2ec3b_a4e451e87dfb47aaae48b37c3a69a2df~mv2.png","Abigraf")]
 LOCAL_LOGOS = [("mars.webp","Mars"),("corbion.webp","Corbion"),("chs.webp","CHS"),("vandali.webp","Vandali S/A"),("maxi-grafica.webp","Maxi Gráfica")]  # (arquivo em assets/clientes, nome)
+# recorte das margens brancas dos logos antigos (vindos do Wix), para ficarem do tamanho dos novos
+LOGO_CROP = {'b2ec3b_bd3b6d50a4a9414aa1fcbeff8c4dae95~mv2.png': (71, 79, 123, 106), 'b2ec3b_492630f1242a4963bfcd7d8aab898618~mv2.png': (24, 107, 217, 52), 'b2ec3b_e27dbb60a5f746df90a4dff1ebb42538~mv2.png': (22, 97, 221, 71), 'b2ec3b_ffbf732b431942b0a13bce409ec99a67~mv2.png': (23, 99, 219, 67), 'b2ec3b_5267c0ccd0074df5a8b8d78c9777522a~mv2.png': (18, 89, 229, 87), 'b2ec3b_323d3f9eca724ab297552e5d0077e31a~mv2.png': (29, 71, 206, 125), 'b2ec3b_eb24fd5a8b4e451cbf649541eb9b12e8~mv2.png': (5, 107, 255, 52), 'b2ec3b_a5b57f09c66a4997837848a502abf114~mv2.png': (44, 80, 174, 104), 'b2ec3b_61f4cef028444930877e428802601edb~mv2.png': (29, 90, 206, 91), 'b2ec3b_41f7d3c23b3749c4a66e551cb622f6e1~mv2.jpeg': (0, 0, 481, 96), 'b2ec3b_a4e451e87dfb47aaae48b37c3a69a2df~mv2.png': (16, 29, 143, 118)}
+def wix_logo(i):
+    c = LOGO_CROP.get(i)
+    ext = i.rsplit(".",1)[-1]
+    if c: return f"https://static.wixstatic.com/media/{i}/v1/crop/x_{c[0]},y_{c[1]},w_{c[2]},h_{c[3]}/logo.{ext}"
+    return f"https://static.wixstatic.com/media/{i}/v1/fit/w_480,h_240,q_90/logo.{ext}"
 def logos_imgs():
-    return "".join(f'<img src="https://static.wixstatic.com/media/{i}/v1/fit/w_480,h_240,q_90/logo.png" alt="{a}" loading="lazy">' for i,a in LOGOS)+"".join(f'<img src="assets/clientes/{f}" alt="{a}" loading="lazy">' for f,a in LOCAL_LOGOS)
+    return "".join(f'<img src="{wix_logo(i)}" alt="{a}" loading="lazy">' for i,a in LOGOS)+"".join(f'<img src="assets/clientes/{f}" alt="{a}" loading="lazy">' for f,a in LOCAL_LOGOS)
 def logos(label="Empresas que confiam na ACK"):
     return f'<div class="logos"><p>{label}</p><div class="marquee" id="marq"><div>{logos_imgs()}</div></div></div>'
 
