@@ -38,8 +38,8 @@ body+=f'''
       <span class="eyebrow rv">O que é</span>
       <h2 class="rv d1" style="margin:18px 0 22px">Excelência operacional é <span class="it gold">método aplicado todos os dias</span></h2>
       <div class="prose rv d2">
-        <p>Num mercado competitivo, a diferença entre as empresas está na forma como a operação funciona: quanto se perde, quanto se produz com o mesmo recurso e quão rápido os problemas são resolvidos.</p>
-        <p>A ACK leva para a sua empresa as metodologias mais consolidadas da indústria, <strong>Lean, TPM e WCM</strong>, de forma prática e no ritmo da sua realidade. A gente trabalha lado a lado com o seu time até o método virar rotina.</p>
+        <p>Em um mercado competitivo, a diferença entre as empresas está na forma como a operação funciona: quanto se perde, quanto se produz com o mesmo recurso e quão rápido os problemas são resolvidos.</p>
+        <p>A ACK leva à sua empresa as metodologias mais consolidadas da indústria, <strong>Lean, TPM e WCM</strong>, de forma prática e no ritmo da sua realidade. Nós trabalhamos lado a lado com o seu time até o método virar rotina.</p>
       </div>
       <div class="rv" style="margin-top:30px">{btn("Quero falar com um consultor","contato.html?assunto=Consultoria LEAN/TPM WCM")}</div>
     </div>
@@ -64,7 +64,7 @@ body+=f'''
 {band("Redução de custos",'Quer saber quanto a sua operação <span class="it gold">está perdendo?</span>',"O Assessment Industrial mapeia perdas, monta o baseline de custos e mostra a curva de captura de resultados para os próximos 12 meses.","Conhecer o assessment","assessment-industrial.html")}
 {logos()}
 {faq_section(FAQ_EO,'Dúvidas sobre <span class="it gold">excelência operacional</span>')}
-{final('Qual é o maior desafio da sua operação hoje? <span class="it gold">A gente ajuda a resolver.</span>',"Fale com um consultor da ACK e dê o primeiro passo para transformar os resultados da sua empresa.","Consultoria LEAN/TPM WCM")}
+{final('Qual é o maior desafio da sua operação hoje? <span class="it gold">Nós ajudamos a resolver.</span>',"Fale com um consultor da ACK e dê o primeiro passo para transformar os resultados da sua empresa.","Consultoria LEAN/TPM WCM")}
 '''
 P[URL_EO]=("Consultoria em Excelência Operacional: LEAN, TPM e WCM · ACK Institute",
  "Consultoria em Excelência Operacional com Lean Manufacturing, TPM e WCM: diagnóstico, gestão da manutenção, rotina, lideranças e preparação para o JIPM. Brasil e América Latina.",
@@ -123,7 +123,7 @@ body+=f'''
   <div class="wrap split" style="align-items:center">
     <div>
       <span class="eyebrow rv">Entregável principal</span>
-      <h2 class="rv d1" style="margin:18px 0 22px">Uma curva de captura de resultados <span class="it gold">para a sua indústria</span></h2>
+      <h2 class="rv d1" style="margin:18px 0 22px">Uma curva de captura de resultados <span class="it gold">para indústria</span></h2>
       <p class="lead rv d2">Mais do que apresentar oportunidades, mostramos como elas se transformam em resultado ao longo dos meses.</p>
       <div class="cstats rv d2"><div><b>R$ 555 mil</b><small>captura acumulada no exemplo</small></div><div><b>R$ 1,2 mi</b><small>run rate anualizado no M12</small></div></div>
     </div>

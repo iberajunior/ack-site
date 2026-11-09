@@ -18,7 +18,7 @@ FAQ_T=[("Os treinamentos são feitos dentro da empresa?","Sim. O formato princip
  ("Os participantes recebem certificado?","Sim, emitimos certificado de participação para quem cumpre a carga horária do treinamento."),
  ("Qual o número de participantes por turma?","Depende do tema. Treinamentos práticos como 5S e causa raiz funcionam melhor com turmas menores; temas comportamentais aceitam grupos maiores. Combinamos isso na proposta.")]
 rows="".join(f'<a class="trow" href="contato.html?assunto=Treinamentos" data-img="{img(i,600,440)}"><span class="n">{k+1:02d}</span><div><h3>{t}</h3><small style="display:block;margin-top:8px;color:#5c5a80;font-size:14px">{d}</small></div><span class="tg">{"".join(f"<em>{x.strip()}</em>" for x in tg.split("·"))}</span></a>' for k,(t,i,d,tg) in enumerate(TEMAS))
-body=phero(tr,"Treinamentos In Company",'Escolha o tema. <span class="it gold">A gente adapta</span> para a sua equipe.',
+body=phero(tr,"Treinamentos In Company",'Escolha o tema, <span class="it gold">nós adaptamos</span> à sua equipe.',
  "Treinamentos em melhoria contínua, qualidade, gestão e comportamento, aplicados dentro da sua empresa com carga horária e exemplos da sua operação.",I_A,
  btn("Solicitar proposta de treinamento","contato.html?assunto=Treinamentos")+btn("Ver os temas","#temas",False),
  '<span>Na sua empresa</span><span>Conteúdo ajustado</span><span>Com certificado</span>')

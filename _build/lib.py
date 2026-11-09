@@ -105,7 +105,7 @@ FOOTER = f'''<footer>
 <a class="wa" href="{WA}" aria-label="Conversar no WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg></a>'''
 
 ORG = {"@type":"ProfessionalService","@id":SITE+"/#org","name":"ACK Institute","alternateName":"Instituto Ackler","url":SITE,"telephone":"+55 41 99576-0079","email":"contato@institutoackler.com.br",
-       "address":[{"@type":"PostalAddress","streetAddress":"Alameda Presidente Taunay, 130 - Batel","addressLocality":"Curitiba","addressRegion":"PR","postalCode":"80420-180","addressCountry":"BR"},{"@type":"PostalAddress","streetAddress":"Av. Presidente Juscelino Kubitschek, 1327 - Itaim Bibi","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},{"@type":"PostalAddress","addressLocality":"Porto Alegre","addressRegion":"RS","addressCountry":"BR"},{"@type":"PostalAddress","addressLocality":"Asunción","addressCountry":"PY"}]}
+       "address":[{"@type":"PostalAddress","streetAddress":"Alameda Presidente Taunay, 130 - Batel","addressLocality":"Curitiba","addressRegion":"PR","postalCode":"80420-180","addressCountry":"BR"},{"@type":"PostalAddress","streetAddress":"Av. Presidente Juscelino Kubitschek, 1327 - Itaim Bibi","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},{"@type":"PostalAddress","streetAddress":"Av. Carlos Gomes, 700 - Sala 606, Edifício Platinum Tower - Petrópolis","addressLocality":"Porto Alegre","addressRegion":"RS","postalCode":"90448-000","addressCountry":"BR"},{"@type":"PostalAddress","addressLocality":"Asunción","addressCountry":"PY"}]}
 
 def crumbs_ld(trail):
     return {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":SITE+"/"+h} for i,(n,h) in enumerate(trail)]}
@@ -193,7 +193,7 @@ def faq_items(qs, open_first=True):
 
 def faq_ld(qs):
     import re
-    strip=lambda s: re.sub(r'<[^>]+>','',s)
+    strip=lambda s: re.sub(r'<[^>]+>','',re.sub(r'<br\s*/?>',' ',s))
     return {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":strip(q),"acceptedAnswer":{"@type":"Answer","text":strip(a)}} for q,a in qs]}
 
 def faq_section(qs, title='Dúvidas sobre <span class="it gold">este serviço</span>', lead="Se a sua pergunta não estiver aqui, chame a gente no WhatsApp."):
@@ -302,7 +302,7 @@ WA_SVG = '<svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6
 FOOTER = f'''<footer>
   <div class="wrap">
     <div class="foot">
-      <div><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"><p style="max-width:300px;line-height:1.6">Consultoria em gestão, governança e excelência operacional, treinamentos e cursos em melhoria contínua.</p>{socials("soc fsoc")}</div>
+      <div><img src="assets/logo.png" alt="ACK Institute · Consultores Associados"><p style="max-width:300px;line-height:1.6">Consultoria, treinamentos e cursos em melhoria contínua, excelência operacional, gestão e governança.</p>{socials("soc fsoc")}</div>
       <div><h4>Soluções</h4><a href="consultoria-excelencia-operacional.html">Excelência Operacional</a><a href="consultoria-empresarial.html">Gestão Operacional</a><a href="assessment-industrial.html">Redução de Custos</a><a href="planejamento-estrategico.html">Planejamento Estratégico</a><a href="treinamentos.html">Treinamentos</a><a href="team-building.html">Team Building</a></div>
       <div><h4>A ACK</h4><a href="sobre.html">Sobre</a><a href="cursos.html">Cursos</a><a href="conteudos.html">Conteúdos</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="{AREA_ALUNO}" target="_blank" rel="noopener">Área do aluno</a></div>
       <div><h4>Contato</h4><a href="{WA}">(41) 99576-0079</a><a href="mailto:contato@institutoackler.com.br">contato@institutoackler.com.br</a><a href="contato.html#unidades">Curitiba · São Paulo</a><a href="contato.html#unidades">Porto Alegre · Asunción (PY)</a></div>
@@ -392,7 +392,7 @@ NEWS = [
  ("b2ec3b_a852c1191f144a999cc6776fbd128753~mv2.jpg","24 set 2025","Team Building","Team building com Lego no Grupo Risotolândia","Mais de 45 profissionais do PCP em uma dinâmica para fortalecer colaboração, comunicação e confiança."),
  ("b2ec3b_7efa3035e2e54a60b718661bd78c96f2~mv2.jpeg","24 set 2025","Clientes","Almoço com nossas clientes da Convexa","Camila e Larissa iniciaram o projeto em 2024/25 e renovaram com a ACK para 2025/26. Jornada de melhoria contínua!"),
 ]
-SECTORS = [("brief","Escritórios e serviços corporativos"),("chart","Indústria e manufatura"),("screen","Tecnologia e inovação"),("flow","Construção civil e engenharia"),("link","Distribuidoras, varejo e e-commerce"),("heart","Saúde, bem-estar e educação"),("shield","Poder público")]
+SECTORS = [("brief","Escritórios e serviços corporativos"),("chart","Indústria e manufatura"),("screen","Tecnologia e inovação"),("flow","Construção civil e engenharia"),("link","Distribuidoras, varejo e e-commerce"),("heart","Saúde, bem-estar e educação")]
 def sectors_html():
     return '<div class="sectors">'+"".join(f'<div class="sector rv d{i%3}"><i>{ico(k)}</i><span>{t}</span></div>' for i,(k,t) in enumerate(SECTORS))+'</div>'
 
@@ -400,7 +400,7 @@ def sectors_html():
 UNITS = [
  ("Curitiba","PR · Brasil","Alameda Pres. Taunay, 130 · Batel","(41) 99576-0079"),
  ("São Paulo","SP · Brasil","Av. Pres. Juscelino Kubitschek, 1327 · Itaim Bibi","(11) 99788-1112"),
- ("Porto Alegre","RS · Brasil","",""),
+ ("Porto Alegre","RS · Brasil","Av. Carlos Gomes, 700 · Petrópolis",""),
  ("Asunción","Paraguai","",""),
 ]
 def units_html(cls="units"):

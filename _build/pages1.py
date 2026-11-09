@@ -71,7 +71,7 @@ body+=f'''
 </section>
 {logos()}
 {testimonials_section()}
-{final('Conte o desafio da sua empresa. <span class="it gold">A gente mostra o caminho.</span>',"Uma conversa inicial, sem compromisso, para entender o momento da empresa e indicar a melhor frente de trabalho.")}
+{final('Apresente seu desafio, <span class="it gold">mostraremos o caminho para vencê-lo.</span>',"Uma conversa inicial, sem compromisso, para entender o momento da empresa e indicar a melhor frente de trabalho.")}
 '''
 P["sobre.html"]=("Sobre a ACK Institute · 35 anos de experiência industrial em gestão",
  "Conheça a ACK Institute, fundada por Josemar Thans Ackler após 35 anos em grandes indústrias. Consultoria, excelência operacional, treinamentos e cursos. Curitiba, São Paulo, Porto Alegre e Asunción.",
@@ -82,7 +82,7 @@ tr=[HOME,("Gestão Operacional","consultoria-empresarial.html")]
 FAQ_C=[("A consultoria atende pequenas empresas?","Sim. Temos um formato pensado para pequenas e médias empresas, com escopo e duração menores. O método é o mesmo usado na indústria, ajustado à sua realidade."),
  ("Quanto tempo dura um projeto de consultoria?","Depende do escopo. Um planejamento estratégico pode ser feito em 30 dias. Projetos de implantação de rotina de gestão e melhoria de processos costumam ser acompanhados por alguns meses. Na conversa inicial a gente define o prazo junto com você."),
  ("A consultoria é presencial?","Pode ser presencial, a distância ou mista. Etapas como diagnóstico e implantação no chão de fábrica funcionam melhor presencialmente; o acompanhamento pode ser on-line."),
- ("Qual a diferença entre consultoria e treinamento?","Na consultoria, trabalhamos junto com a liderança para diagnosticar, planejar e implantar melhorias. No treinamento, capacitamos a equipe em um tema específico. Muitos projetos combinam os dois.")]
+ ("Qual a diferença entre consultoria e assessoria?","<strong>Consultoria:</strong> o especialista só orienta, quem executa é o cliente.<br><strong>Assessoria:</strong> o especialista diagnostica e executa, entra no negócio, analisa dados e conduz o projeto (modelo da ACK).")]
 body=phero(tr,"Consultoria em Gestão Operacional",'Gestão organizada, <span class="it gold">resultado medido</span>',
  "Consultoria em gestão e governança para pequenas empresas e grandes indústrias. A gente diagnostica, monta o plano junto com a liderança e acompanha a implantação.",I_B,
  btn("Quero um diagnóstico da minha empresa","contato.html?assunto=Consultoria")+btn("Como funciona","#metodo",False),
@@ -142,7 +142,7 @@ body+=f'''
 
 {band("Projeto de 30 dias",'Comece pelo <span class="it gold">planejamento estratégico</span>',"Em 30 dias, você sai com metas, prioridades e indicadores definidos para o próximo ano.","Conhecer o projeto","planejamento-estrategico.html")}
 {faq_section(FAQ_C)}
-{final('Conte o desafio da sua empresa. <span class="it gold">A gente mostra o caminho.</span>',"Uma conversa inicial, sem compromisso, para entender o momento da empresa e indicar o formato de consultoria mais adequado.","Consultoria")}
+{final('Apresente seu desafio, <span class="it gold">mostraremos o caminho para vencê-lo.</span>',"Uma conversa inicial, sem compromisso, para entender o momento da empresa e indicar o formato de consultoria mais adequado.","Consultoria")}
 '''
 P["consultoria-empresarial.html"]=("Consultoria em Gestão Operacional e Governança · ACK Institute",
  "Consultoria em gestão, governança, indicadores e processos para pequenas empresas e grandes indústrias. Diagnóstico, plano e acompanhamento. Curitiba e São Paulo.",

@@ -113,7 +113,7 @@ P[CURSO_URL]=P[CURSO_URL]+("has-mbar",)
 tr=[HOME,("Perguntas frequentes","perguntas-frequentes.html")]
 GER=[("O que a ACK Institute faz?","A ACK Institute oferece consultoria empresarial em gestão e governança, treinamentos in company, consultoria em excelência operacional (Lean, TPM e WCM), redução de custos industriais e cursos de melhoria contínua para pequenas empresas e grandes indústrias."),
  ("Quem fundou a ACK Institute?","A ACK Institute foi fundada por Josemar Thans Ackler, que trabalhou 35 anos em grandes indústrias, no Brasil e no exterior."),
- ("A ACK Institute atende pequenas empresas ou só indústrias?","Atendemos os dois. Temos consultoria específica para pequenas e médias empresas e projetos para grandes indústrias. O método é o mesmo, o tamanho do projeto se ajusta à sua realidade."),
+ ("A ACK atende empresas de qualquer porte?","Sim, nossos produtos são desenhados para atender empresas de qualquer porte e segmento."),
  ("Onde a ACK Institute fica?","Temos unidades em Curitiba (Batel), São Paulo (Itaim Bibi), Porto Alegre (RS) e Asunción, no Paraguai. Atendemos empresas de todo o Brasil e da América Latina, presencialmente ou a distância, conforme o tipo de projeto."),
  ("Como peço um orçamento?","Pelo WhatsApp (41) 99576-0079, pelo e-mail contato@institutoackler.com.br ou pelo formulário da página de contato. A primeira conversa é sem compromisso.")]
 GROUPS=[("geral","Sobre a ACK",GER),
@@ -151,7 +151,7 @@ POSTS=[("Indicadores","Quais indicadores uma PME deve acompanhar",I_B,"Poucos n�
 tr=[HOME,("Conteúdos","conteudos.html")]
 cats=["Todos","Melhoria contínua","Indicadores","Qualidade","Gestão","Planejamento","Pessoas","Excelência operacional"]
 posts="".join(f'<a class="post rv d{i%3}" href="{ART}" data-cat="{c}"><div class="ph"><img src="{img(im,800,500)}" alt="" loading="lazy"></div><div class="bd"><small>{c}</small><h3>{t}</h3><p>{p}</p><span class="by">Leitura de {m}</span></div></a>' for i,(c,t,im,p,m) in enumerate(POSTS))
-body=phero(tr,"Conteúdos",'Gestão explicada <span class="it gold">sem complicação</span>',
+body=phero(tr,"Conteúdos",'Por dentro da <span class="it gold">Excelência Operacional</span>',
  "Artigos práticos sobre melhoria contínua, indicadores, liderança e excelência operacional, para aplicar na sua empresa ainda nesta semana.",I_C,"","","short")
 body+=f'''
 <section class="sec light" style="padding-top:90px">
